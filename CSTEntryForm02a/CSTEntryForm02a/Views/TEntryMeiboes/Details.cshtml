@@ -1,0 +1,132 @@
+@model CSTEntryForm02a.Models.TEntryMeibo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TEntryMeibo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ENameSei)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ENameSei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ENameNamae)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ENameNamae)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ENameSeiKana)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ENameSeiKana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ENameNamaeKana)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ENameNamaeKana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ENenrei)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ENenrei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EJitakuRosen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EJitakuRosen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EJitakuMoyorieki)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EJitakuMoyorieki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EJitakuToEki)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EJitakuToEki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EShigotoKibou)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EShigotoKibou)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Ampm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Ampm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Ampm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Ampm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Ampm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Ampm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EQuestion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EQuestion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ETimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ETimeStamp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

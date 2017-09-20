@@ -1,0 +1,174 @@
+@model CSTEntryForm.Models.TKojin
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>TKojin</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ENamae" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ENamae" class="form-control" />
+                <span asp-validation-for="ENamae" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ENamaeNamae" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ENamaeNamae" class="form-control" />
+                <span asp-validation-for="ENamaeNamae" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ENamaeSeiKana" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ENamaeSeiKana" class="form-control" />
+                <span asp-validation-for="ENamaeSeiKana" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ENamaeNamaeKana" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ENamaeNamaeKana" class="form-control" />
+                <span asp-validation-for="ENamaeNamaeKana" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ENenrei" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ENenrei" class="form-control" />
+                <span asp-validation-for="ENenrei" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ESeibetsu" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="ESeibetsu" class ="form-control" asp-items="ViewBag.ESeibetsu"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EEmail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EEmail" class="form-control" />
+                <span asp-validation-for="EEmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EDenwaArea" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EDenwaArea" class="form-control" />
+                <span asp-validation-for="EDenwaArea" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EDenwaLocal" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EDenwaLocal" class="form-control" />
+                <span asp-validation-for="EDenwaLocal" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EDenwa4num" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EDenwa4num" class="form-control" />
+                <span asp-validation-for="EDenwa4num" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EShigotoKibou" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EShigotoKibou" class="form-control" />
+                <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan1Month" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan1Month" class="form-control" />
+                <span asp-validation-for="EMendan1Month" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan1Day" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan1Day" class="form-control" />
+                <span asp-validation-for="EMendan1Day" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan1Ampm" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan1Ampm" class="form-control" />
+                <span asp-validation-for="EMendan1Ampm" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan2Month" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan2Month" class="form-control" />
+                <span asp-validation-for="EMendan2Month" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan2Day" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan2Day" class="form-control" />
+                <span asp-validation-for="EMendan2Day" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan2Ampm" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan2Ampm" class="form-control" />
+                <span asp-validation-for="EMendan2Ampm" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan3Month" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan3Month" class="form-control" />
+                <span asp-validation-for="EMendan3Month" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan3Day" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan3Day" class="form-control" />
+                <span asp-validation-for="EMendan3Day" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EMendan3Ampm" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EMendan3Ampm" class="form-control" />
+                <span asp-validation-for="EMendan3Ampm" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EQuestion" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EQuestion" class="form-control" />
+                <span asp-validation-for="EQuestion" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

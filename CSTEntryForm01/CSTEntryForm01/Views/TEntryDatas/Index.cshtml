@@ -1,0 +1,155 @@
+@model IEnumerable<CSTEntryForm01.Models.TEntryData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ELastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EFirstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ELastnameKana)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EFirstnameKana)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ENenrei)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EDenwa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMoyoriekiRosen)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMoyoriekiEki)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMoyoriekiKyori)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EShigotoKibou)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan1Month)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan1Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan1Ampm)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan2Month)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan2Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan2Ampm)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan3Month)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan3Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMendan3Ampm)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EQuestion)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ELastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EFirstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ELastnameKana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EFirstnameKana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ENenrei)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EDenwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMoyoriekiRosen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMoyoriekiEki)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMoyoriekiKyori)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EShigotoKibou)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan1Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan1Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan1Ampm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan2Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan2Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan2Ampm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan3Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan3Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMendan3Ampm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EQuestion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

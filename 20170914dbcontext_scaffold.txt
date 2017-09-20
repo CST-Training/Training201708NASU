@@ -1,0 +1,10 @@
+
+ cd C:\Users\CST\source\repos\CSTEntryForm02a\CSTEntryForm02a
+
+
+ dotnet ef dbcontext scaffold "Server=(localdb)\v11.0;Database=EntryMeibo;Trusted_Connection=True" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+
+
+

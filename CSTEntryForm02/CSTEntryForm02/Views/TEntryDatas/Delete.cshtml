@@ -1,0 +1,149 @@
+@model CSTEntryForm02.Models.TEntryData
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TEntryData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="Id" />
+        <dt>
+            @Html.DisplayNameFor(model => model.ELastname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ELastname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EFirstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EFirstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ELastnameKana)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ELastnameKana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EFirstnameKana)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EFirstnameKana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ENenrei)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ENenrei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EDenwa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EDenwa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMoyoriekiRosen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMoyoriekiRosen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMoyoriekiEki)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMoyoriekiEki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMoyoriekiKyori)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMoyoriekiKyori)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EShigotoKibou)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EShigotoKibou)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Month)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Month)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Day)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Day)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Ampm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Ampm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Month)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Month)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Day)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Day)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Ampm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Ampm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Month)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Month)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Day)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Day)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Ampm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Ampm)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EQuestion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EQuestion)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
