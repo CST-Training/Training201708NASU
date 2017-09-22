@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
+<h3>　</h3>
 <h2>株式会社サイバースペーステクノロジー</h2>
 <style>
     h2 {
@@ -26,16 +27,18 @@
         grid-template-rows: minmax(20px auto);
     }*/
     .container {
-        width: 940px;
-        margin: 0 auto;
-
-        grid-gap: 30px;
+        /*width: 940px;*/
+        width: 1154px;
+         
     }
-
-    .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
+    div {
+        margin: 7px;
+    }
+    .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 .gird12{
     float: left;
     display: inline;
     margin-left: 20px;
+   
     }
     .grid1 {
         width: 60px;
@@ -75,6 +78,14 @@
         clear: left;
     }
 
+    .item_height16 {
+        height: auto;
+    }
+
+    .item_height100 {
+        height: 100px;
+    }
+
     /* clearfix */
     .clearfix:after {
     visibility: hidden;
@@ -82,7 +93,7 @@
     font-size: 0;
     content: " ";
     clear: both;
-    height: 0;
+    /*height: 0;*/
     }
  
     /* IE6 */
@@ -113,111 +124,115 @@
         @*<div class="form-group">*@
         <div class="grid2 first">
             @*<label asp-for="ENameSei" class="col-md-3 control-label"></label>*@
-            <label asp-for="ENameSei" class="grid2 control-label"></label>
+            <label asp-for="ENameSei" class="grid2 item_height16"></label>
         </div>
 
         <div class="grid3">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSei" class="form-control" placeholder="姓" value="" />　　<input style="display: inline; " asp-for="ENameNamae" class="form-control" placeholder="名" value="" />*@
-            <input asp-for="ENameSei" style="display: inline;" class="form-control" placeholder="姓" value="" />
+            <input asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameSei" class="text-danger"></span>
         </div>
-        <div class="grid3">
-            <input asp-for="ENameNamae" class="form-control" placeholder="名" value="" />
+        <div class="grid3 ">
+            <input asp-for="ENameNamae" placeholder="名" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameNamae" class="text-danger"></span>
         </div>
 
 
 
         @*<div class="form-horizontal">*@
-        <div class="grid2 first">
+        <div class="grid2  first">
             @*<div class="form-group">*@
             @*<label asp-for="ENameSeiKana" class="col-md-3 control-label"></label>*@
-            <label asp-for="ENameSeiKana" class="grid2 control-label"></label>
+            <label asp-for="ENameSeiKana" class="grid2 item_height16"></label>
         </div>
         <div class="grid3">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSeiKana" class="form-control" placeholder="せい" value="" />　　<input style="display: inline;" asp-for="ENameNamaeKana" class="form-control" placeholder="めい" value="" />*@
-            <input asp-for="ENameSeiKana" class="form-control" placeholder="せい" value="" />
+            <input asp-for="ENameSeiKana" placeholder="せい" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameSeiKana" class="text-danger"></span>
         </div>
         <div class="grid3">
-            <input asp-for="ENameNamaeKana" class="form-control" placeholder="めい" value="" />
+            <input asp-for="ENameNamaeKana" placeholder="めい" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameNamaeKana" class="text-danger"></span>
         </div>
 
-        <div class="grid2 first">
+        <div class="grid2  first">
             @*<div class="form-group">*@
-            <label asp-for="ENenrei" class="grid2 control-label"></label>
+            <label asp-for="ENenrei" class="grid2 item_height16"></label>
         </div>
-        <div class="grid2">
+        <div class="grid1 ">
             @*<div class="col-md-2">*@
-            <input asp-for="ENenrei" class="form-control" placeholder="年齢" value="" />
+            <input asp-for="ENenrei" placeholder="年齢" class="grid1 item_height16 " value="" />
             <span asp-validation-for="ENenrei" class="text-danger"></span>
         </div>
 
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EJitakuRosen" class="grid2 control-label"></label>
+            <label asp-for="EJitakuRosen" class="grid2 item_height16"></label>
         </div>
         @*<div class="col-md-10">*@
         <div class="grid3">
             @*<input style="display: inline; float: left;" asp-for="EJitakuRosen" class="form-control" placeholder="路線名" value="" />線　-　<input style="display: inline;" 　asp-for="EJitakuMoyorieki" class="form-control" placeholder="駅名" value="" />駅*@
-            <input asp-for="EJitakuRosen" class="form-control" placeholder="路線名" value="" />
+            <input asp-for="EJitakuRosen" placeholder="路線名" class="grid3 item_height16 " value="" />
             <span asp-validation-for="EJitakuRosen" class="text-danger"></span>
         </div>
         <div class="grid3">
-            <input asp-for="EJitakuMoyorieki" class="form-control" placeholder="駅名" value="" />
+            <input asp-for="EJitakuMoyorieki" placeholder="駅名" class="grid3 item_height16 " value="" />
             <span asp-validation-for="EJitakuMoyorieki" class="text-danger"></span>
         </div>
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EJitakuToEki" class="grid2 control-label"></label>
+            <label asp-for="EJitakuToEki" class="grid2 item_height16"></label>
         </div>
-        <div class="grid2">
+        <div class="grid2 item_height16 ">
             @*<div class="col-md-10">*@
-            <input asp-for="EJitakuToEki" class="form-control" placeholder="徒歩　　分" value="" />
+            <input asp-for="EJitakuToEki" placeholder="徒歩　　分" class="grid2 item_height16 " value="" />
             <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
         </div>
         <div class="grid2 first">
 
             @*<div class="form-group">*@
-            <label asp-for="EShigotoKibou" class="grid2 control-label"></label>
+            <label asp-for="EShigotoKibou" class="grid2 item_height16"></label>
         </div>
-        <div class="grid9">
+        <div class="grid4 item_height100 ">
             @*<div class="col-md-10">*@
-            <input asp-for="EShigotoKibou" class="form-control" />
+            <input asp-for="EShigotoKibou" class="grid4 item_height100 "/>
             <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
         </div>
+
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EEmail" class="grid2 control-label"></label>
+            <label asp-for="EEmail" class="grid2 item_height16"></label>
         </div>
-        <div class="grid8">
+        <div class="grid4">
             @*<div class="col-md-10">*@
-            <input asp-for="EEmail" class="form-control" placeholder="メール　アドレス" value="" />
+            <input asp-for="EEmail" placeholder="メール　アドレス"  class="grid4 item_height16 " value="" />
             <span asp-validation-for="EEmail" class="text-danger"></span>
         </div>
+
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EPhone" class="grid2 control-label"></label>
+            <label asp-for="EPhone" class="grid2 item_height16"></label>
         </div>
-        <div class="grid5">
+        <div class="grid4">
             @*<div class="col-md-10">*@
-            <input asp-for="EPhone" class="form-control" placeholder="電話番号" value="" />
+            <input asp-for="EPhone" placeholder="電話番号" class="grid4 item_height16  " value="" />
             <span asp-validation-for="EPhone" class="text-danger"></span>
         </div>
+
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EMendan1Date" class="grid2 control-label"></label>
-        </div>
+            <label asp-for="EMendan1Date" class="grid2 item_height16" ></label>
+        </div> 
+
         <div class="grid2">
             @*<div class="col-md-2">*@
 
-            <input style="text-align:center;" type="date" asp-for="EMendan1Date" min="2017-01-01" max="2020-12-31" step="1" class="form-control" />
+            <input style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan1Date" min="2017-01-01" max="2020-12-31" step="1"  />
             <span asp-validation-for="EMendan1Date" class="text-danger"></span>
         </div>
-        <div class="grid2">
+        <div class="grid2 item_height16 ">
             [ <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="AM" name="AMPM1" asp-for="EMendan1Ampm" class="form-control" />AM
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="PM" name="AMPM1" asp-for="EMendan1Ampm" class="form-control" />PM
             ]
@@ -228,17 +243,17 @@
         <div class="grid2 first">
 
             @*<div class="form-group">*@
-            <label asp-for="EMendan2Date" class="grid2 control-label"></label>
+            <label asp-for="EMendan2Date" class="grid2 item_height16" ></label>
 
 
         </div>
         <div class="grid2">
             @*<div class="col-md-2">*@
 
-            <input style="text-align:center;" type="date" asp-for="EMendan2Date" min="2017-01-01" max="2020-12-31" step="1" class="form-control" />
+            <input style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan2Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan2Date" class="text-danger"></span>
         </div>
-        <div class="grid2">
+        <div class="grid2 item_height16 ">
             [ <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="AM" name="AMPM2" asp-for="EMendan2Ampm" class="form-control" />AM
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="PM" name="AMPM2" asp-for="EMendan2Ampm" class="form-control" />PM
             ]
@@ -249,14 +264,14 @@
         <div class="grid2 first">
 
             @*<div class="form-group">*@
-            <label asp-for="EMendan3Date" class="grid2 control-label"></label>
+            <label asp-for="EMendan3Date" class="grid2 item_height16"></label>
             @*<div class="col-md-2">*@
         </div>
-        <div class="grid2">
-            <input style="text-align:center;" type="date" asp-for="EMendan3Date" min="2017-01-01" max="2020-12-31" step="1" class="form-control" />
+        <div class="grid2 item_height16  ">
+            <input style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan3Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan3Date" class="text-danger"></span>
         </div>
-        <div class="grid2">
+        <div class="grid2 item_height16 ">
             [ <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="AM" name="AMPM3" asp-for="EMendan3Ampm" class="form-control" />AM
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="PM" name="AMPM3" asp-for="EMendan3Ampm" class="form-control" />PM
             ]
@@ -267,11 +282,11 @@
         <div class="grid2 first">
 
             @*<div class="form-group">*@
-            <label asp-for="EQuestion" class="grid2 control-label"></label>
+            <label asp-for="EQuestion" class="grid2 item_height16"></label>
         </div>
-        <div class="grid9">
+        <div class="grid4">
             @*<div class="col-md-10">*@
-            <input asp-for="EQuestion" class="form-control" />
+            <input asp-for="EQuestion" class="grid4 item_height100" />
             <span asp-validation-for="EQuestion" class="text-danger"></span>
         </div>
         
