@@ -4,6 +4,22 @@
     ViewData["Title"] = "Create";
 }
 
+<head>
+    <script type="text/javascript"></script>
+    function checkAmpm(){
+    var result = '';
+    var f = document.entryform.EMendan1Ampm;
+
+    for(var i=0; i < f.length; i++){
+        if(f[i].checked){
+            result=result + f[i].value;
+        }
+      
+    }
+
+    EMendan1Ampm = result;
+</head>
+
 
 <h3>　</h3>
 <h2>株式会社サイバースペーステクノロジー</h2>
@@ -233,15 +249,14 @@
         </div>
        
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="AM" name="EMendan1Am" class="form-control" />　AM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan1Ampm" class="form-control" />　AM
           
             @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="PM" name="EMendan1Pm" class="form-control" />　PM
-            <input name="EMendan1Ampm" type="hidden" class="form-control" />
-
-            <span asp-validation-for="EMendan1Ampm" class="text-danger"></span>
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan1Ampm" class="form-control" />　PM
+          
+            @*<span asp-validation-for="EMendan1Pm" class="text-danger"></span>*@
         </div>
 
         @*<div class="grid2 first">
@@ -323,7 +338,7 @@
         <div class="col-md-offset-2 col-md-10 first">
             @*<div class="form-group">*@
             @*<div class="col-md-offset-2 col-md-10">*@
-                <input type="submit" value="登録" class="btn btn-default" />
+                <input type="submit" value="登録" onclick="checkAmpm" class="btn btn-default" />
             @*</div>*@
         </div>
  

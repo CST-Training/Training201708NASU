@@ -9,14 +9,31 @@ using CSTEntryForm02a.Models;
 
 namespace CSTEntryForm02a.Controllers
 {
+    //public class Ampm
+    //{
+    //    string emendan1ampm;
+    //    TEntryMeiboesController TEMcontrollers;
+
+    //    public string EMendan1Ampm
+    //    { get { return emendan1ampm; }
+    //      set { emendan1ampm = TEMcontrollers.EMendan1Ampm; }
+    //    }
+
+
+    //}
+    
+
     public class TEntryMeiboesController : Controller
     {
+           
+        
         private readonly EntryMeiboContext _context;
 
         public TEntryMeiboesController(EntryMeiboContext context)
         {
-            _context = context;    
+            _context = context;
         }
+
 
         // GET: TEntryMeiboes
         public async Task<IActionResult> Index()
@@ -48,14 +65,26 @@ namespace CSTEntryForm02a.Controllers
             return View();
         }
 
+        public string EMendan1Ampm { get; set; }
+
 
         // POST: TEntryMeiboes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
+
+            var formdata = Request.Form;
+            string emendan1ampm = "";
+          
+            emendan1ampm = EMendan1Am;
+            emendan1ampm += EMendan1Pm;
+
+            this.EMendan1Ampm = emendan1ampm; 
+            tEntryMeibo.EMendan1Ampm = emendan1ampm;
+
             if (ModelState.IsValid)
             {
                 _context.Add(tEntryMeibo);
@@ -63,6 +92,8 @@ namespace CSTEntryForm02a.Controllers
                 return RedirectToAction("Index");
             }
             return View(tEntryMeibo);
+
+           
         }
 
         // GET: TEntryMeiboes/Edit/5

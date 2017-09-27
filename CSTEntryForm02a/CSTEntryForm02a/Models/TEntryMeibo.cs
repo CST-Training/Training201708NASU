@@ -3,54 +3,18 @@ using System.Collections.Generic;
 
 using System.ComponentModel.DataAnnotations;
 
+using CSTEntryForm02a.Controllers;
+
 namespace CSTEntryForm02a.Models
 {
-    public class AmpmGen
-    {
-        public string mendan1ampm = "";
-       
-        public AmpmGen()
-        {
-          
-        }
 
-        public bool EMendan1Am { get; set; }
-
-        public bool EMendan1Pm { get; set; }
-
-        public string Mendan1Ampm
-        {
-            get { return mendan1ampm; }
-
-            set
-            {
-                if(EMendan1Am == true && EMendan1Pm == true)
-                mendan1ampm = "AMPM";
-                else if (EMendan1Am == true && EMendan1Pm == false)
-                mendan1ampm = "AM";
-                else if (EMendan1Am == false && EMendan1Pm == true)
-                mendan1ampm = "PM";
-                else
-                mendan1ampm = "none";
-
-
-            }
-        }
-
-
-    }
 
     public partial class TEntryMeibo
     {
-        public string ampm1 = "";
-        public string emendan1ampm = "";
+        //Ampm ampm = new Ampm();
 
-        AmpmGen ampmgen = new AmpmGen();
+        string emendan1ampm;
 
-        public TEntryMeibo()
-        {
-            EMendan1Ampm = ampmgen.Mendan1Ampm;
-        }
 
         [Display(Name = "エントリーID")]
         public int Id { get; set; }
@@ -80,15 +44,14 @@ namespace CSTEntryForm02a.Models
         public DateTime? EMendan1Date { get; set; }
 
         [Display(Name = "AMPM")]
-        public string EMendan1Ampm
-        {
-            get { return emendan1ampm; }
+        public string EMendan1Ampm { get; set; }
+       
 
-            set
-            {
-                emendan1ampm = ampm1;
-            }
-        }
+        //[Display(Name = "AMPM")]
+        //public string EMendan1Ampm
+        //{ get { return emendan1ampm; }
+        //  set { emendan1ampm = EMendan1Ampm; }
+        //}
 
         [Display(Name = "個人面談日 第二希望")]
         public DateTime? EMendan2Date { get; set; }

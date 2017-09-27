@@ -4,7 +4,6 @@
     ViewData["Title"] = "Create";
 }
 
-
 <h3>　</h3>
 <h2>株式会社サイバースペーステクノロジー</h2>
 <style>
@@ -111,7 +110,7 @@
 
 </style>
 
-<form name="entryform" asp-action="Create">
+<form asp-action="Create">
    
 
     <div class="container">
@@ -231,17 +230,15 @@
             <input style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan1Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan1Date" class="text-danger"></span>
         </div>
-       
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="AM" name="EMendan1Am" class="form-control" />　AM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="true" name="EMendan1Am" class="form-control" />　AM
           
             @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="PM" name="EMendan1Pm" class="form-control" />　PM
-            <input name="EMendan1Ampm" type="hidden" class="form-control" />
-
-            <span asp-validation-for="EMendan1Ampm" class="text-danger"></span>
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="true" name="EMendan1Pm" class="form-control" />　PM
+          
+            @*<span asp-validation-for="EMendan1Pm" class="text-danger"></span>*@
         </div>
 
         @*<div class="grid2 first">
@@ -277,7 +274,6 @@
             <input style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan2Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan2Date" class="text-danger"></span>
         </div>
-        
         <div class="grid1 item_height16 ">
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="AM" name="AMPM2" asp-for="EMendan2Ampm" class="form-control" />　AM
         </div>
