@@ -9,19 +9,7 @@ using CSTEntryForm02a.Models;
 
 namespace CSTEntryForm02a.Controllers
 {
-    //public class Ampm
-    //{
-    //    string emendan1ampm;
-    //    TEntryMeiboesController TEMcontrollers;
-
-    //    public string EMendan1Ampm
-    //    { get { return emendan1ampm; }
-    //      set { emendan1ampm = TEMcontrollers.EMendan1Ampm; }
-    //    }
-
-
-    //}
-    
+     
 
     public class TEntryMeiboesController : Controller
     {
@@ -65,25 +53,35 @@ namespace CSTEntryForm02a.Controllers
             return View();
         }
 
-        public string EMendan1Ampm { get; set; }
-
-
+       
         // POST: TEntryMeiboes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, string EMendan2Am, string EMendan2Pm, string EMendan3Am, string EMendan3Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
 
             var formdata = Request.Form;
+
+            var am1 = Request.Form["EMendan1Am"];
+
+
+
             string emendan1ampm = "";
-          
+            string emendan2ampm = "";
+            string emendan3ampm = "";
+
             emendan1ampm = EMendan1Am;
             emendan1ampm += EMendan1Pm;
+            emendan2ampm = EMendan2Am;
+            emendan2ampm += EMendan2Pm;
+            emendan3ampm = EMendan3Am;
+            emendan3ampm += EMendan3Pm;
 
-            this.EMendan1Ampm = emendan1ampm; 
             tEntryMeibo.EMendan1Ampm = emendan1ampm;
+            tEntryMeibo.EMendan2Ampm = emendan2ampm;
+            tEntryMeibo.EMendan3Ampm = emendan3ampm;
 
             if (ModelState.IsValid)
             {
