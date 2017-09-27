@@ -231,14 +231,14 @@
             <span asp-validation-for="EMendan1Date" class="text-danger"></span>
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="true" name="EMendan1Am" class="form-control" />　AM
-          
-            @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="AM" name="AMPM1" asp-for="EMendan1Ampm" class="form-control" />　AM
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="true" name="EMendan1Pm" class="form-control" />　PM
-          
-            @*<span asp-validation-for="EMendan1Pm" class="text-danger"></span>*@
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="radio" value="PM" name="AMPM1" asp-for="EMendan1Ampm" class="form-control" />　PM
+
+
+
+            <span asp-validation-for="EMendan1Ampm" class="text-danger"></span>
         </div>
 
         @*<div class="grid2 first">
