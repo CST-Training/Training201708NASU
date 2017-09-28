@@ -59,25 +59,29 @@ namespace CSTEntryForm02a.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, string EMendan2Am, string EMendan2Pm, string EMendan3Am, string EMendan3Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        //public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, string EMendan2Am, string EMendan2Pm, string EMendan3Am, string EMendan3Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Create( [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
 
             var formdata = Request.Form;
 
             var am1 = Request.Form["EMendan1Am"];
-
-
+            var pm1 = Request.Form["EMendan1Pm"];
+            var am2 = Request.Form["EMendan2Am"];
+            var pm2 = Request.Form["EMendan2Pm"];
+            var am3 = Request.Form["EMendan3Am"];
+            var pm3 = Request.Form["EMendan3Pm"];
 
             string emendan1ampm = "";
             string emendan2ampm = "";
             string emendan3ampm = "";
 
-            emendan1ampm = EMendan1Am;
-            emendan1ampm += EMendan1Pm;
-            emendan2ampm = EMendan2Am;
-            emendan2ampm += EMendan2Pm;
-            emendan3ampm = EMendan3Am;
-            emendan3ampm += EMendan3Pm;
+            emendan1ampm = am1;
+            emendan1ampm += pm1;
+            emendan2ampm = am2;
+            emendan2ampm += pm2;
+            emendan3ampm = am3;
+            emendan3ampm += pm3;
 
             tEntryMeibo.EMendan1Ampm = emendan1ampm;
             tEntryMeibo.EMendan2Ampm = emendan2ampm;

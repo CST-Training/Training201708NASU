@@ -33,7 +33,7 @@ namespace CSTEntryForm02a.Models
         [Display(Name = "駅")]
         public string EJitakuMoyorieki { get; set; }
         [Display(Name = "最寄り駅までの距離")]
-        public short? EJitakuToEki { get; set; }
+        public string EJitakuToEki { get; set; }
         [Display(Name = "希望する仕事")]
         public string EShigotoKibou { get; set; }
         [Display(Name = "email")]

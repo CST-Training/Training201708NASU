@@ -37,7 +37,9 @@ namespace CSTEntryForm02a.Models
                     .HasColumnName("eJitakuRosen")
                     .HasMaxLength(50);
 
-                entity.Property(e => e.EJitakuToEki).HasColumnName("eJitakuToEki");
+                entity.Property(e => e.EJitakuToEki)
+                    .HasColumnName("eJitakuToEki")
+                    .HasMaxLength(20);
 
                 entity.Property(e => e.EMendan1Ampm)
                     .HasColumnName("eMendan1Ampm")

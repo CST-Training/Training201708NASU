@@ -165,7 +165,7 @@
         </div>
         <div class="grid1 ">
             @*<div class="col-md-2">*@
-            <input asp-for="ENenrei" placeholder="年齢" class="grid1 item_height16 " value="" />
+            <input asp-for="ENenrei"　style="display: inline-flex;"　placeholder="年齢" class="grid1 item_height16 "　value="" />
             <span asp-validation-for="ENenrei" class="text-danger"></span>
         </div>
 
@@ -199,7 +199,7 @@
         </div>
         <div class="grid4 item_height100 ">
             @*<div class="col-md-10">*@
-            <input asp-for="EShigotoKibou" class="grid4 item_height100 "/>
+            <input asp-for="EShigotoKibou" class="grid4 item_height100 " align="left" valign="top"/>
             <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
         </div>
 
@@ -296,7 +296,7 @@
         </div>
         <div class="grid4">
             @*<div class="col-md-10">*@
-            <input asp-for="EQuestion" class="grid4 item_height100" />
+            <input asp-for="EQuestion" class="grid4 item_height100"  align="left" valign="top"/>
             <span asp-validation-for="EQuestion" class="text-danger"></span>
         </div>
         
@@ -304,7 +304,7 @@
         <div class="col-md-offset-2 col-md-10 first">
             @*<div class="form-group">*@
             @*<div class="col-md-offset-2 col-md-10">*@
-                <input type="submit" value="登録" class="btn btn-default" />
+              <input type="submit" value="登録" class="btn btn-default" />
             @*</div>*@
         </div>
  
@@ -312,7 +312,12 @@
 </form>
 
 <div>
-    <a asp-action="Index">Go to List</a>
+    <a asp-action="Details">Go to Details</a>
+    @*<td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+    </td>*@
 </div>
 
 
