@@ -126,7 +126,7 @@
         @*<div class="form-group">*@
         <div class="grid2 first">
             @*<label asp-for="ENameSei" class="col-md-3 control-label"></label>*@
-            <label asp-for="ENameSei" class="grid2 item_height16"></label>
+            <label asp-for="ENameSei" class="grid2 item_height16">氏名　 <font color="red">（必須）</font></label>
         </div>
 
         <div class="grid3">
@@ -146,7 +146,7 @@
         <div class="grid2  first">
             @*<div class="form-group">*@
             @*<label asp-for="ENameSeiKana" class="col-md-3 control-label"></label>*@
-            <label asp-for="ENameSeiKana" class="grid2 item_height16"></label>
+            <label asp-for="ENameSeiKana" class="grid2 item_height16">ふりがな　<font color="red">（必須）</font></label>
         </div>
         <div class="grid3">
             @*<div class="col-md-10">*@
@@ -165,7 +165,7 @@
         </div>
         <div class="grid1 ">
             @*<div class="col-md-2">*@
-            <input asp-for="ENenrei"　style="display: inline-flex;"　placeholder="年齢" class="grid1 item_height16 "　value="" />
+            <input asp-for="ENenrei"　style = "text-align : right;" class="grid1 item_height16 "　value="歳"  />
             <span asp-validation-for="ENenrei" class="text-danger"></span>
         </div>
 
@@ -189,7 +189,7 @@
         </div>
         <div class="grid2 item_height16 ">
             @*<div class="col-md-10">*@
-            <input asp-for="EJitakuToEki" placeholder="徒歩　　分" class="grid2 item_height16 " value="" />
+            <input asp-for="EJitakuToEki" placeholder="e.g. 徒歩10分" class="grid2 item_height16 " value="" />
             <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
         </div>
         <div class="grid2 first">
@@ -199,13 +199,13 @@
         </div>
         <div class="grid4 item_height100 ">
             @*<div class="col-md-10">*@
-            <input asp-for="EShigotoKibou" class="grid4 item_height100 " align="left" valign="top"/>
+            <textarea name="EKibou_textarea" class="grid4 item_height100 "　 placeholder="希望する仕事はなんですか？" ></textarea>
             <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
         </div>
 
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EEmail" class="grid2 item_height16"></label>
+            <label asp-for="EEmail" class="grid2 item_height16">email　<font color="red">（必須）</font></label>
         </div>
         <div class="grid4">
             @*<div class="col-md-10">*@
@@ -233,12 +233,12 @@
         </div>
        
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="AM" name="EMendan1Am" class="form-control" />　AM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan1Am" class="form-control" />　AM
           
             @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="PM" name="EMendan1Pm" class="form-control" />　PM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan1Pm" class="form-control" />　PM
             <input name="EMendan1Ampm" type="hidden" class="form-control" />
 
             <span asp-validation-for="EMendan1Ampm" class="text-danger"></span>
@@ -257,12 +257,12 @@
         </div>
         
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="AM" name="EMendan2Am" class="form-control" />　AM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan2Am" class="form-control" />　AM
 
             @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="PM" name="EMendan2Pm" class="form-control" />　PM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan2Pm" class="form-control" />　PM
             <input name="EMendan2Ampm" type="hidden" class="form-control" />
 
             <span asp-validation-for="EMendan2Ampm" class="text-danger"></span>
@@ -277,13 +277,13 @@
             <span asp-validation-for="EMendan3Date" class="text-danger"></span>
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="AM" name="EMendan3Am" class="form-control" />　AM
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan3Am" class="form-control" />　AM
 
             @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" checked="checked" value="PM" name="EMendan3Pm" class="form-control" />　PM
-            <input name="EMendan2Ampm" type="hidden" class="form-control" />
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan3Pm" class="form-control" />　PM
+            <input name="EMendan3Ampm" type="hidden" class="form-control" />
 
             <span asp-validation-for="EMendan3Ampm" class="text-danger"></span>
         </div>
@@ -294,9 +294,9 @@
             @*<div class="form-group">*@
             <label asp-for="EQuestion" class="grid2 item_height16"></label>
         </div>
-        <div class="grid4">
+        <div class="grid4 item_height100 ">
             @*<div class="col-md-10">*@
-            <input asp-for="EQuestion" class="grid4 item_height100"  align="left" valign="top"/>
+            <textarea name="EQ_textarea" class="grid4 item_height100 "　 placeholder="質問や要望など、自由にお書きください。"></textarea>
             <span asp-validation-for="EQuestion" class="text-danger"></span>
         </div>
         
@@ -305,6 +305,7 @@
             @*<div class="form-group">*@
             @*<div class="col-md-offset-2 col-md-10">*@
               <input type="submit" value="登録" class="btn btn-default" />
+           
             @*</div>*@
         </div>
  
@@ -312,7 +313,8 @@
 </form>
 
 <div>
-    <a asp-action="Details">Go to Details</a>
+    <a asp-action="Index">Go to List</a>
+    @*｜<a asp-action="Review">Go to 確認画面</a>*@
     @*<td>
         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

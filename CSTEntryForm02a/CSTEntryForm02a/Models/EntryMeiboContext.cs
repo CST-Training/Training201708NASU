@@ -85,7 +85,9 @@ namespace CSTEntryForm02a.Models
                     .HasColumnName("eNameSeiKana")
                     .HasMaxLength(20);
 
-                entity.Property(e => e.ENenrei).HasColumnName("eNenrei");
+                entity.Property(e => e.ENenrei)
+                    .HasColumnName("eNenrei")
+                    .HasMaxLength(20); 
 
                 entity.Property(e => e.EPhone)
                     .HasColumnName("ePhone")
@@ -99,10 +101,15 @@ namespace CSTEntryForm02a.Models
                     .HasColumnName("eShigotoKibou")
                     .HasMaxLength(800);
 
+
                 entity.Property(e => e.ETimeStamp)
                     .HasColumnName("eTimeStamp")
-                    .HasColumnType("timestamp")
-                    .ValueGeneratedOnAddOrUpdate();
+                    .HasColumnType("date");
+
+                //entity.Property(e => e.ETimeStamp)
+                //    .HasColumnName("eTimeStamp")
+                //    .HasColumnType("timestamp")
+                //    .ValueGeneratedOnAddOrUpdate();
             });
         }
     }

@@ -71,6 +71,9 @@ namespace CSTEntryForm02a.Controllers
             var pm2 = Request.Form["EMendan2Pm"];
             var am3 = Request.Form["EMendan3Am"];
             var pm3 = Request.Form["EMendan3Pm"];
+            var kibou = Request.Form["EKibou_textarea"];
+            var question = Request.Form["EQ_textarea"];
+            var localdate = DateTime.Now;
 
             string emendan1ampm = "";
             string emendan2ampm = "";
@@ -86,14 +89,23 @@ namespace CSTEntryForm02a.Controllers
             tEntryMeibo.EMendan1Ampm = emendan1ampm;
             tEntryMeibo.EMendan2Ampm = emendan2ampm;
             tEntryMeibo.EMendan3Ampm = emendan3ampm;
+            tEntryMeibo.EShigotoKibou = kibou;
+            tEntryMeibo.EQuestion = question;
+            tEntryMeibo.ETimeStamp = localdate;
+
 
             if (ModelState.IsValid)
             {
                 _context.Add(tEntryMeibo);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+
+                return RedirectToAction("Create");
+
             }
             return View(tEntryMeibo);
+
+
 
            
         }

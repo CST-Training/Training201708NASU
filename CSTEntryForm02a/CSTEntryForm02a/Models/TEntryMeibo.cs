@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using System.ComponentModel.DataAnnotations;
 
-using CSTEntryForm02a.Controllers;
+using System.IO;
 
 namespace CSTEntryForm02a.Models
 {
@@ -27,7 +27,7 @@ namespace CSTEntryForm02a.Models
         [Display(Name = "(めい)")]
         public string ENameNamaeKana { get; set; }
         [Display(Name = "年齢")]
-        public short? ENenrei { get; set; }
+        public string ENenrei { get; set; }
         [Display(Name = "自宅最寄り駅(路線-駅)")]
         public string EJitakuRosen { get; set; }
         [Display(Name = "駅")]
@@ -64,10 +64,10 @@ namespace CSTEntryForm02a.Models
         [Display(Name = "質問・要望など")]
         public string EQuestion { get; set; }
         [Display(Name = "記入日")]
-        public byte[] ETimeStamp { get; set; }
+        public DateTime? ETimeStamp { get; set; }
 
     }
 
-
+   
 
 }
