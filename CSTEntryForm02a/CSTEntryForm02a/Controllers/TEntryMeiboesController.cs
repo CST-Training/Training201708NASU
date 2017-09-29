@@ -77,7 +77,9 @@ namespace CSTEntryForm02a.Controllers
             var enenrei = Request.Form["ENenrei"];
             var ejitakurosen = Request.Form["EJitakuRosen"];
             var ejitakumoyorieki = Request.Form["EJitakuMoyorieki"];
-            var ejitakutoeki = Request.Form["EJitakuToEki"];
+            //var ejitakutoeki = Request.Form["EJitakuToEki"];
+            var ejitakutoeki_koutsu = Request.Form["EJitakuToEki_Koutsu"];
+            var ejitakutoeki_jikan = Request.Form["EJitakuToEki_Jikan"];
             var eemail = Request.Form["EEmail"];
             var ephone = Request.Form["EPhone"];
             var emendan1date = Request.Form["EMendan1Date"];
@@ -97,6 +99,7 @@ namespace CSTEntryForm02a.Controllers
             string emendan1ampm = "";
             string emendan2ampm = "";
             string emendan3ampm = "";
+            string ejitakutoeki = "";
 
             emendan1ampm = am1;
             emendan1ampm += pm1;
@@ -104,10 +107,13 @@ namespace CSTEntryForm02a.Controllers
             emendan2ampm += pm2;
             emendan3ampm = am3;
             emendan3ampm += pm3;
+            ejitakutoeki = ejitakutoeki_koutsu;
+            ejitakutoeki += ejitakutoeki_jikan;
 
             tEntryMeibo.EMendan1Ampm = emendan1ampm;
             tEntryMeibo.EMendan2Ampm = emendan2ampm;
             tEntryMeibo.EMendan3Ampm = emendan3ampm;
+            tEntryMeibo.EJitakuToEki = ejitakutoeki;
             tEntryMeibo.EShigotoKibou = kibou;
             tEntryMeibo.EQuestion = question;
             tEntryMeibo.ETimeStamp = localdate;
