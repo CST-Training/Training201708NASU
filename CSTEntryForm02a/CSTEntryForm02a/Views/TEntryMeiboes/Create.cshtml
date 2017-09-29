@@ -4,6 +4,28 @@
     ViewData["Title"] = "Create";
 }
 
+<head>
+<script type="text/javascript">
+    <!--
+    function check() {
+        if (document.entryform.ENameSei.value == null || document.entryform.ENameSei.value == ""
+            || document.entryform.ENameNamae.value == null || document.entryform.ENameNamae.value == ""
+            || document.entryform.ENameSeiKana.value == null || document.entryform.ENameSeiKana.value == ""
+            || document.entryform.ENameNamaeKana.value == null || document.entryform.ENameNamaeKana.value == ""
+            || document.entryform.EEmail.value == null || document.entryform.EEmail.value == ""
+
+        ) {
+            alert("必須項目を入力して下さい。");
+            return false;
+        } else {
+            return true;
+        }
+
+    }   
+    // -->
+
+</script>
+</head>
 
 <h3>　</h3>
 <h2>株式会社サイバースペーステクノロジー</h2>
@@ -132,11 +154,11 @@
         <div class="grid3">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSei" class="form-control" placeholder="姓" value="" />　　<input style="display: inline; " asp-for="ENameNamae" class="form-control" placeholder="名" value="" />*@
-            <input asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16 " value="" />
+            <input name="ENameSei" asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameSei" class="text-danger"></span>
         </div>
         <div class="grid3 ">
-            <input asp-for="ENameNamae" placeholder="名" class="grid3 item_height16 " value="" />
+            <input name="ENameNamae" asp-for="ENameNamae" placeholder="名" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameNamae" class="text-danger"></span>
         </div>
 
@@ -151,11 +173,11 @@
         <div class="grid3">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSeiKana" class="form-control" placeholder="せい" value="" />　　<input style="display: inline;" asp-for="ENameNamaeKana" class="form-control" placeholder="めい" value="" />*@
-            <input asp-for="ENameSeiKana" placeholder="せい" class="grid3 item_height16 " value="" />
+            <input name="ENameSeiKana" asp-for="ENameSeiKana" placeholder="せい" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameSeiKana" class="text-danger"></span>
         </div>
         <div class="grid3">
-            <input asp-for="ENameNamaeKana" placeholder="めい" class="grid3 item_height16 " value="" />
+            <input name="ENameNamaeKana" asp-for="ENameNamaeKana" placeholder="めい" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameNamaeKana" class="text-danger"></span>
         </div>
 
@@ -209,7 +231,7 @@
         </div>
         <div class="grid4">
             @*<div class="col-md-10">*@
-            <input asp-for="EEmail" placeholder="メール　アドレス"  class="grid4 item_height16 " value="" />
+            <input name="EEmail" asp-for="EEmail" placeholder="メール　アドレス"  class="grid4 item_height16 " value="" />
             <span asp-validation-for="EEmail" class="text-danger"></span>
         </div>
 
@@ -304,7 +326,7 @@
         <div class="col-md-offset-2 col-md-10 first">
             @*<div class="form-group">*@
             @*<div class="col-md-offset-2 col-md-10">*@
-              <input type="submit" value="登録" class="btn btn-default" />
+              <input type="submit" onclick="return check();" value="登録" class="btn btn-default" />
            
             @*</div>*@
         </div>

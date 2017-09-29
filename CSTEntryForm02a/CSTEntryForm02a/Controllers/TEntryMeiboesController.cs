@@ -93,18 +93,21 @@ namespace CSTEntryForm02a.Controllers
             tEntryMeibo.EQuestion = question;
             tEntryMeibo.ETimeStamp = localdate;
 
+           
+                if (ModelState.IsValid)
+                {
 
-            if (ModelState.IsValid)
-            {
-                _context.Add(tEntryMeibo);
-                await _context.SaveChangesAsync();
-                //return RedirectToAction("Index");
+               
+                    _context.Add(tEntryMeibo);
+                    await _context.SaveChangesAsync();
+                    //return RedirectToAction("Index");
 
-                return RedirectToAction("Create");
-
-            }
-            return View(tEntryMeibo);
-
+                    return RedirectToAction("Create");
+               
+                }
+            
+                return View(tEntryMeibo);
+           
 
 
            
