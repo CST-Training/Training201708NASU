@@ -121,7 +121,7 @@ namespace CSTEntryForm02a.Controllers
 
             if (ModelState.IsValid)
             {
-                string path = @"c:\エントリー\エントリー.txt";
+                string path = @"/エントリー/エントリー.txt";
                 using (var s = new FileStream(path, FileMode.Append))
                 {
 

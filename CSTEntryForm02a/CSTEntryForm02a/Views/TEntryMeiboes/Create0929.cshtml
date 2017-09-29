@@ -219,11 +219,34 @@
             @*<div class="form-group">*@
             <label asp-for="EJitakuToEki" class="grid2 item_height16"></label>
         </div>
-        <div class="grid2 item_height16 ">
-            @*<div class="col-md-10">*@
+        @*<div class="grid2 item_height16 ">
             <input name="EJitakuToEki" asp-for="EJitakuToEki" placeholder="例: 徒歩10分" class="grid2 item_height16 " value="" />
             <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
+        </div>*@
+        <div class="grid2 item_height16 ">
+            <select name="EJitakuToEki_Koutsu" style="text-align: center;" class="grid2 item_height16 " >
+                    <option value="未選択">未選択</option>
+                    <option value="徒歩">徒歩</option>
+                    <option value="バス">バス</option>
+                    <option value="その他">その他</option>
+            </select>
         </div>
+        <div class="grid2 item_height16 ">
+                <select name="EJitakuToEki_Jikan"  style="text-align: center;" class="grid2 item_height16">
+                    <option value="未選択">未選択</option>
+                    <option value="1-10分">１分から１０分</option>
+                    <option value="11-20分">１１分から２０分</option>
+                    <option value="21-30分">２１分から３０分</option>
+                    <option value="31-40分">３１分から４０分</option>
+                    <option value="41-50分">５１分から６０分</option>
+                    <option value="61-90分">1時間から1時間半</option>
+                    <option value="91分以上">1時間半以上</option>
+                  
+                </select>
+
+                <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
+        </div>
+
         <div class="grid2 first">
 
             @*<div class="form-group">*@
