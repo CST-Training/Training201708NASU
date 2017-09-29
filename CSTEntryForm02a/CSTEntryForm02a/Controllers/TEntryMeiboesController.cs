@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CSTEntryForm02a.Models;
 
+using System.IO;
+
+
+
+
 namespace CSTEntryForm02a.Controllers
 {
      
@@ -53,17 +58,31 @@ namespace CSTEntryForm02a.Controllers
             return View();
         }
 
-       
+
         // POST: TEntryMeiboes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, string EMendan2Am, string EMendan2Pm, string EMendan3Am, string EMendan3Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
-        public async Task<IActionResult> Create( [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Create([Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
 
             var formdata = Request.Form;
+
+            var enamesei = Request.Form["ENameSei"];
+            var enamenamae = Request.Form["ENameNamae"];
+            var enameseikana = Request.Form["ENameSeiKana"];
+            var enamenamaekana = Request.Form["ENameNamaeKana"];
+            var enenrei = Request.Form["ENenrei"];
+            var ejitakurosen = Request.Form["EJitakuRosen"];
+            var ejitakumoyorieki = Request.Form["EJitakuMoyorieki"];
+            var ejitakutoeki = Request.Form["EJitakuToEki"];
+            var eemail = Request.Form["EEmail"];
+            var ephone = Request.Form["EPhone"];
+            var emendan1date = Request.Form["EMendan1Date"];
+            var emendan2date = Request.Form["EMendan2Date"];
+            var emendan3date = Request.Form["EMendan3Date"];
 
             var am1 = Request.Form["EMendan1Am"];
             var pm1 = Request.Form["EMendan1Pm"];
@@ -93,25 +112,63 @@ namespace CSTEntryForm02a.Controllers
             tEntryMeibo.EQuestion = question;
             tEntryMeibo.ETimeStamp = localdate;
 
-           
-                if (ModelState.IsValid)
+
+            if (ModelState.IsValid)
+            {
+                string path = @"c:\エントリー\エントリー.txt";
+                using (var s = new FileStream(path, FileMode.Append))
                 {
 
-               
-                    _context.Add(tEntryMeibo);
-                    await _context.SaveChangesAsync();
-                    //return RedirectToAction("Index");
 
-                    return RedirectToAction("Create");
-               
+
+                    using (var sw = new StreamWriter(s))
+                    {
+                        sw.WriteLine(DateTime.Now + "\t" +
+                                     enamesei + "\t" +
+                                     enamenamae + "\t" +
+                                     enameseikana + "\t" +
+                                     enamenamaekana + "\t" +
+                                     enenrei + "\t" +
+                                     ejitakurosen + "\t" +
+                                     ejitakumoyorieki + "\t" +
+                                     ejitakutoeki + "\t" +
+                                     kibou + "\t" +
+                                     eemail + "\t" +
+                                     ephone + "\t" +
+                                     emendan1date + "\t" +
+                                     emendan1ampm + "\t" +
+                                     emendan2date + "\t" +
+                                     emendan2ampm + "\t" +
+                                     emendan3date + "\t" +
+                                     emendan3ampm + "\t" +
+                                     question + "\t" +
+
+                                     "END"
+                                     );
+                        sw.Dispose();
+                    }
                 }
-            
-                return View(tEntryMeibo);
-           
 
 
-           
+
+
+
+                _context.Add(tEntryMeibo);
+                await _context.SaveChangesAsync();
+                //return RedirectToAction("Index");
+
+                return RedirectToAction("Create");
+            }
+
+            return View(tEntryMeibo);
+
         }
+        
+           
+
+
+           
+        
 
         // GET: TEntryMeiboes/Edit/5
         public async Task<IActionResult> Edit(int? id)
