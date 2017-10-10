@@ -4,10 +4,12 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+
+
+<h2>CST Entry Form</h2>
 
 <div>
-    <h4>TEntryMeibo</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -118,15 +120,27 @@
         <dd>
             @Html.DisplayFor(model => model.EQuestion)
         </dd>
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ETimeStamp)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ETimeStamp)
-        </dd>
+        </dd>*@
     </dl>
+    <p>
+        <INPUT type="button" value="Back" onClick="history.back()" class="grid2 item_height16 btn btn-default" >
+
+        @*<input type="submit" asp-action="Create" asp-route-id="null"  style="position: absolute; left: 20%" onclick="return check3()" value="OK" class="grid2 item_height16 btn btn-default" />*@
+
+        @*<a asp-action="Create">Finish and Create New</a>*@
+
+        @*<input type="submit" value="OK" class="grid2 item_height16 btn btn-default" />*@
+
+        @*<a href="javascript:history.back()" style="position: absolute; left: 30%">[Back]</a>*@
+
+    </p>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+@*<div>
+    <input type="button" onclick="return check1()" value="“o˜^" class="btn btn-default" />
+
+</div>*@

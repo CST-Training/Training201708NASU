@@ -7,7 +7,7 @@
 <head>
 <script type="text/javascript">
     <!--
-    function check() {
+    function check1() {
         if (document.entryform.ENameSei.value == null || document.entryform.ENameSei.value == ""
             || document.entryform.ENameNamae.value == null || document.entryform.ENameNamae.value == ""
             || document.entryform.ENameSeiKana.value == null || document.entryform.ENameSeiKana.value == ""
@@ -18,18 +18,43 @@
             alert("必須項目を入力して下さい。");
             return false;
         } else {
-
-                      
+            alert("確認画面へ移動します。少々お待ちください。");
             return true;
+            
         }
 
     }   
+   
+    function check2() {
+        if (document.entryform.ENameSei.value == null || document.entryform.ENameSei.value == ""
+            || document.entryform.ENameNamae.value == null || document.entryform.ENameNamae.value == ""
+            || document.entryform.ENameSeiKana.value == null || document.entryform.ENameSeiKana.value == ""
+            || document.entryform.ENameNamaeKana.value == null || document.entryform.ENameNamaeKana.value == ""
+            || document.entryform.EEmail.value == null || document.entryform.EEmail.value == ""
+
+        ) {
+            alert("必須項目を入力して下さい。");
+            return false;
+
+        } else {
+            alert("ありがとうございました。");
+            return true;
+
+        }
+
+    }   
+
     // -->
 
 </script>
+    
+
 </head>
 
-<h3>　</h3>
+
+
+
+@*<h3>　</h3>*@
 <h2>株式会社サイバースペーステクノロジー</h2>
 <style>
     h2 {
@@ -166,6 +191,7 @@
             @*<input style="display: inline; float: left;" asp-for="ENameSei" class="form-control" placeholder="姓" value="" />　　<input style="display: inline; " asp-for="ENameNamae" class="form-control" placeholder="名" value="" />*@
             <input name="ENameSei" asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16 " value="" />
             <span asp-validation-for="ENameSei" class="text-danger"></span>
+            
         </div>
         <div class="grid3 ">
             <input name="ENameNamae" asp-for="ENameNamae" placeholder="名" class="grid3 item_height16 " value="" />
@@ -203,7 +229,7 @@
 
         <div class="grid2 first">
             @*<div class="form-group">*@
-            <label asp-for="EJitakuRosen" class="grid2 item_height16"></label>
+            <label asp-for="EJitakuRosen" class="grid2 item_height16">自宅最寄り駅(路線-駅)</label>
         </div>
         @*<div class="col-md-10">*@
         <div class="grid3">
@@ -233,7 +259,7 @@
         </div>
         <div class="grid2 item_height16 ">
                 <select name="EJitakuToEki_Jikan"  style="text-align: center;" class="grid2 item_height16">
-                    <option value="未選択">未選択</option>
+                    <option value=" ">未選択</option>
                     <option value="1-10分">１分から１０分</option>
                     <option value="11-20分">１１分から２０分</option>
                     <option value="21-30分">２１分から３０分</option>
@@ -254,7 +280,7 @@
         </div>
         <div class="grid4 item_height60 ">
             @*<div class="col-md-10">*@
-            <textarea name="EKibou_textarea" class="grid4 item_height60 "　 placeholder="希望する仕事はなんですか？" ></textarea>
+            <textarea name="EKibou_textarea" class="grid4 item_height60 "　asp-for="EShigotoKibou" placeholder="希望する仕事はなんですか？" ></textarea>
             <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
         </div>
 
@@ -282,68 +308,284 @@
 
             <label asp-for="EMendan1Date" class="grid2 item_height16"></label>
         </div>
-        <div class="grid2 item_height16  ">
+        <div class="grid1 item_height16 ">
+            <select name="EMendan1Tsuki" style="text-align: center;" class="grid1 item_height16 ">
+                <option value="未選択">月</option>
+                <option value="1月">1月</option>
+                <option value="2月">2月</option>
+                <option value="3月">3月</option>
+                <option value="4月">4月</option>
+                <option value="5月">5月</option>
+                <option value="6月">6月</option>
+                <option value="7月">7月</option>
+                <option value="8月">8月</option>
+                <option value="9月">9月</option>
+                <option value="10月">10月</option>
+                <option value="11月">11月</option>
+                <option value="12月">12月</option>
+            </select>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan1Hi" style="text-align: center;" class="grid1 item_height16" >
+                <option value=" ">日</option>
+                <option value="1日">1日</option>
+                <option value="2日">2日</option>
+                <option value="3日">3日</option>
+                <option value="4日">4日</option>
+                <option value="5日">5日</option>
+                <option value="6日">6日</option>
+                <option value="7日">7日</option>
+                <option value="8日">8日</option>
+                <option value="9日">9日</option>
+                <option value="10日">10日</option>
+                <option value="11日">11日</option>
+                <option value="12日">12日</option>
+                <option value="13日">13日</option>
+                <option value="14日">14日</option>
+                <option value="15日">15日</option>
+                <option value="16日">16日</option>
+                <option value="17日">17日</option>
+                <option value="18日">18日</option>
+                <option value="19日">19日</option>
+                <option value="20日">20日</option>
+                <option value="21日">21日</option>
+                <option value="22日">22日</option>
+                <option value="23日">23日</option>
+                <option value="24日">24日</option>
+                <option value="25日">25日</option>
+                <option value="26日">26日</option>
+                <option value="27日">27日</option>
+                <option value="28日">28日</option>
+                <option value="29日">29日</option>
+                <option value="30日">30日</option>
+                <option value="31日">31日</option>
+            </select>
+            <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan1Youbi" style="text-align: center;" class="grid1 item_height16 " >
+                <option value=" ">曜日</option>
+                <option value="(月)">月曜</option>
+                <option value="(火)">火曜</option>
+                <option value="(水)">水曜</option>
+                <option value="(木)">木曜</option>
+                <option value="(金)">金曜</option>
+            </select>
+        </div>
+        <div class="grid2 item_height16 ">
+            <select name="EMendan1Ampm" style="text-align: center;" class="grid2 item_height16 ">
+                <option value=" ">午前？ 午後？</option>
+                <option value="AMPM">AMPMどちらでも</option>
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
+
+        @*<div class="grid2 item_height16  ">
             <input name="EMendan1Date" style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan1Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan1Date" class="text-danger"></span>
         </div>
-       
-        <div class="grid1 item_height16 ">
+         <div class="grid1 item_height16 ">
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan1Am" class="form-control" />　AM
-          
-            @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan1Pm" class="form-control" />　PM
-            <input name="EMendan1Ampm" type="hidden" class="form-control" />
-
             <span asp-validation-for="EMendan1Ampm" class="text-danger"></span>
-        </div>
+        </div>*@
+
 
         <div class="grid2 first">
 
-            <label asp-for="EMendan2Date" class="grid2 item_height16" ></label>
+            <label asp-for="EMendan2Date" class="grid2 item_height16"></label>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan2Tsuki" style="text-align: center;" class="grid1 item_height16 ">
+                <option value="未選択">月</option>
+                <option value="1月">1月</option>
+                <option value="2月">2月</option>
+                <option value="3月">3月</option>
+                <option value="4月">4月</option>
+                <option value="5月">5月</option>
+                <option value="6月">6月</option>
+                <option value="7月">7月</option>
+                <option value="8月">8月</option>
+                <option value="9月">9月</option>
+                <option value="10月">10月</option>
+                <option value="11月">11月</option>
+                <option value="12月">12月</option>
+            </select>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan2Hi" style="text-align: center;" class="grid1 item_height16">
+                <option value=" ">日</option>
+                <option value="1日">1日</option>
+                <option value="2日">2日</option>
+                <option value="3日">3日</option>
+                <option value="4日">4日</option>
+                <option value="5日">5日</option>
+                <option value="6日">6日</option>
+                <option value="7日">7日</option>
+                <option value="8日">8日</option>
+                <option value="9日">9日</option>
+                <option value="10日">10日</option>
+                <option value="11日">11日</option>
+                <option value="12日">12日</option>
+                <option value="13日">13日</option>
+                <option value="14日">14日</option>
+                <option value="15日">15日</option>
+                <option value="16日">16日</option>
+                <option value="17日">17日</option>
+                <option value="18日">18日</option>
+                <option value="19日">19日</option>
+                <option value="20日">20日</option>
+                <option value="21日">21日</option>
+                <option value="22日">22日</option>
+                <option value="23日">23日</option>
+                <option value="24日">24日</option>
+                <option value="25日">25日</option>
+                <option value="26日">26日</option>
+                <option value="27日">27日</option>
+                <option value="28日">28日</option>
+                <option value="29日">29日</option>
+                <option value="30日">30日</option>
+                <option value="31日">31日</option>
+            </select>
+            <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan2Youbi" style="text-align: center;" class="grid1 item_height16 ">
+                <option value=" ">曜日</option>
+                <option value="(月)">月曜</option>
+                <option value="(火)">火曜</option>
+                <option value="(水)">水曜</option>
+                <option value="(木)">木曜</option>
+                <option value="(金)">金曜</option>
+            </select>
+        </div>
+        <div class="grid2 item_height16 ">
+            <select name="EMendan2Ampm" style="text-align: center;" class="grid2 item_height16 ">
+                <option value=" ">午前？ 午後？</option>
+                <option value="AMPM">AMPMどちらでも</option>
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
 
+        @*<div class="grid2 first">
+            <label asp-for="EMendan2Date" class="grid2 item_height16" ></label>
 
         </div>
         <div class="grid2">
 
             <input name="EMendan2Date" style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan2Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan2Date" class="text-danger"></span>
-        </div>
-        
+        </div>        
         <div class="grid1 item_height16 ">
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan2Am" class="form-control" />　AM
-
-            @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan2Pm" class="form-control" />　PM
-            <input name="EMendan2Ampm" type="hidden" class="form-control" />
-
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan2Pm" class="form-control" />　PM           
             <span asp-validation-for="EMendan2Ampm" class="text-danger"></span>
-        </div>
+        </div>*@
 
         <div class="grid2 first">
 
             <label asp-for="EMendan3Date" class="grid2 item_height16"></label>
         </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan3Tsuki" style="text-align: center;" class="grid1 item_height16 ">
+                <option value="未選択">月</option>
+                <option value="1月">1月</option>
+                <option value="2月">2月</option>
+                <option value="3月">3月</option>
+                <option value="4月">4月</option>
+                <option value="5月">5月</option>
+                <option value="6月">6月</option>
+                <option value="7月">7月</option>
+                <option value="8月">8月</option>
+                <option value="9月">9月</option>
+                <option value="10月">10月</option>
+                <option value="11月">11月</option>
+                <option value="12月">12月</option>
+            </select>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan3Hi" style="text-align: center;" class="grid1 item_height16">
+                <option value=" ">日</option>
+                <option value="1日">1日</option>
+                <option value="2日">2日</option>
+                <option value="3日">3日</option>
+                <option value="4日">4日</option>
+                <option value="5日">5日</option>
+                <option value="6日">6日</option>
+                <option value="7日">7日</option>
+                <option value="8日">8日</option>
+                <option value="9日">9日</option>
+                <option value="10日">10日</option>
+                <option value="11日">11日</option>
+                <option value="12日">12日</option>
+                <option value="13日">13日</option>
+                <option value="14日">14日</option>
+                <option value="15日">15日</option>
+                <option value="16日">16日</option>
+                <option value="17日">17日</option>
+                <option value="18日">18日</option>
+                <option value="19日">19日</option>
+                <option value="20日">20日</option>
+                <option value="21日">21日</option>
+                <option value="22日">22日</option>
+                <option value="23日">23日</option>
+                <option value="24日">24日</option>
+                <option value="25日">25日</option>
+                <option value="26日">26日</option>
+                <option value="27日">27日</option>
+                <option value="28日">28日</option>
+                <option value="29日">29日</option>
+                <option value="30日">30日</option>
+                <option value="31日">31日</option>
+            </select>
+            <span asp-validation-for="EJitakuToEki" class="text-danger"></span>
+        </div>
+        <div class="grid1 item_height16 ">
+            <select name="EMendan3Youbi" style="text-align: center;" class="grid1 item_height16 ">
+                <option value=" ">曜日</option>
+                <option value="(月)">月曜</option>
+                <option value="(火)">火曜</option>
+                <option value="(水)">水曜</option>
+                <option value="(木)">木曜</option>
+                <option value="(金)">金曜</option>
+            </select>
+        </div>
+        <div class="grid2 item_height16 ">
+            <select name="EMendan3Ampm" style="text-align: center;" class="grid2 item_height16 ">
+                <option value=" ">午前？ 午後？</option>
+                <option value="AMPM">AMPMどちらでも</option>
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
+
+
+
+
+
+
+        @*<div class="grid2 first">
+            <label asp-for="EMendan3Date" class="grid2 item_height16"></label>
+        </div>
         <div class="grid2 item_height16  ">
-            <input name="EMendan3Date" style="text-align:center;" class="grid2 item_height16" type="date" asp-for="EMendan3Date" min="2017-01-01" max="2020-12-31" step="1" />
+            <input name="EMendan3Date" style="text-align:center;" class="grid2 item_height16" type="datetime" asp-for="EMendan3Date" min="2017-01-01" max="2020-12-31" step="1" />
             <span asp-validation-for="EMendan3Date" class="text-danger"></span>
         </div>
         <div class="grid1 item_height16 ">
             <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="AM" name="EMendan3Am" class="form-control" />　AM
-
-            @*<span asp-validation-for="EMendan1Am" class="text-danger"></span>*@
         </div>
         <div class="grid1 item_height16 ">
-            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan3Pm" class="form-control" />　PM
-            <input name="EMendan3Ampm" type="hidden" class="form-control" />
-
+            <input style="text-align:center; width:auto;height:auto; display: inline-flex;" type="checkbox" value="PM" name="EMendan3Pm" class="form-control" />　P
             <span asp-validation-for="EMendan3Ampm" class="text-danger"></span>
-        </div>
-
-        
+        </div>*@
+ 
+ 
         <div class="grid2 first">
 
             @*<div class="form-group">*@
@@ -352,30 +594,57 @@
         @*<div>*@
         <div class="grid8 item_height160 colspan2">
             @*<div class="col-md-10">*@
-            <textarea name="EQ_textarea" class="grid8 item_height160 colspan2"　 placeholder="質問.要望など、自由にお書きください。   (400字まで)"></textarea>
+            <textarea name="EQ_textarea" class="grid8 item_height160 colspan2" asp-for="EQuestion"　 placeholder="質問.要望など、自由にお書きください。   (400字まで)"></textarea>
             <span asp-validation-for="EQuestion" class="text-danger"></span>
         </div>
-              
-        <div class="col-md-offset-2 col-md-10 first">
-            @*<div class="form-group">*@
-            @*<div class="col-md-offset-2 col-md-10">*@
-              <input type="submit" onclick="return check();" value="登録" class="btn btn-default" />
+          
+        
+        <div class="grid2 first">
+
            
-            @*</div>*@
+            <label class="grid2 item_height16">　　</label>
         </div>
+
+        <p>
+        @*<div class="grid2">*@
+           
+            <input type="submit" onclick="return check2()" value="登録 (確認済み)" class="grid2 item_height16 btn btn-default" style="position: relative; left: 10px"/>
+
+           
+        @*</div>*@
+
+        @*<div class="grid2 first">
+              <label class="grid2 item_height16">　　</label>
+        </div>
+
+        <div class="grid2 ">*@
+            <input asp-action="Details" asp-route-id="-1" type="submit" onclick="return check1()" value="確認" class="grid1 item_height16 btn btn-default" style="position: relative; left: 50px"/>
+            @*<input type="submit" onclick="return check2()" name="Soshin" value="入力内容を確認" class="grid2 item_height16 btn btn-default" />*@
+            @*<input type="submit" onclick="return check2()" name="Soshin" value="入力内容を確認" class="grid2 item_height16 btn btn-default" href='http://localhost/TEntryMeiboes/Review.cshtml?enamesei=value' />*@
+            @*<input type="button" datafld="ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,EEMail" onclick="return check1()" action="asp-action Details" value="入力内容を確認" class="grid2 item_height16 btn btn-default" />*@
+            @*<a asp-action="Details" asp-route-id="-1">Details</a>*@
+    
+            @*</div>*@
+        </p>
+
+
+        
  
 </div>
 </form>
 
-<div>
-    <a asp-action="Index">Go to List</a>
-    @*｜<a asp-action="Review">Go to 確認画面</a>*@
-    @*<td>
-        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-    </td>*@
-</div>
+@*<div>
+    <a asp-action="Index">Back to List</a> |
+</div>*@
+
+@*<div>
+    <a asp-action="Details" asp-route-id="">確認画面へ移動する</a>
+</div>*@
+
+
+
+
+
 
 
 @section Scripts {

@@ -13,8 +13,9 @@ namespace CSTEntryForm02a.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            //optionsBuilder.UseSqlServer(@"Server=(localdb)\v11.0;Database=EntryMeibo;Trusted_Connection=True");
-            optionsBuilder.UseSqlServer(@"Server=CST228\SQLEXPRESS;Database=EntryMeibo;User ID=sa;Password=sql#228;Trusted_Connection=False");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\v11.0;Database=EntryMeibo;Trusted_Connection=True");
+            //optionsBuilder.UseSqlServer(@"Server=CST228\SQLEXPRESS;Database=EntryMeibo;User ID=sa;Password=sql#228;Trusted_Connection=False");
+            //optionsBuilder.UseSqlServer(@"Server=PayCSTSrv2016A\SQLEXPRESS;Database=EntryMeibo;User ID=sa;Password=sql#CST;Trusted_Connection=False");
 
         }
 
@@ -47,7 +48,7 @@ namespace CSTEntryForm02a.Models
 
                 entity.Property(e => e.EMendan1Date)
                     .HasColumnName("eMendan1Date")
-                    .HasColumnType("date");
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.EMendan2Ampm)
                     .HasColumnName("eMendan2Ampm")
@@ -55,7 +56,7 @@ namespace CSTEntryForm02a.Models
 
                 entity.Property(e => e.EMendan2Date)
                     .HasColumnName("eMendan2Date")
-                    .HasColumnType("date");
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.EMendan3Ampm)
                     .HasColumnName("eMendan3Ampm")
@@ -63,7 +64,7 @@ namespace CSTEntryForm02a.Models
 
                 entity.Property(e => e.EMendan3Date)
                     .HasColumnName("eMendan3Date")
-                    .HasColumnType("date");
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.ENameNamae)
                     .IsRequired()
@@ -100,7 +101,6 @@ namespace CSTEntryForm02a.Models
                 entity.Property(e => e.EShigotoKibou)
                     .HasColumnName("eShigotoKibou")
                     .HasMaxLength(800);
-
 
                 entity.Property(e => e.ETimeStamp)
                     .HasColumnName("eTimeStamp")

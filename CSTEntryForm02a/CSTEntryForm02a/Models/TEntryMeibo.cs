@@ -13,22 +13,22 @@ namespace CSTEntryForm02a.Models
     {
         //Ampm ampm = new Ampm();
 
-        string emendan1ampm;
+        //string emendan1ampm;
 
 
         [Display(Name = "エントリーID")]
         public int Id { get; set; }
-        [Display(Name = "氏名")]
+        [Display(Name = "姓　")]
         public string ENameSei { get; set; }
-        [Display(Name = "（名）")]
+        [Display(Name = "名　")]
         public string ENameNamae { get; set; }
-        [Display(Name = "ふりがな")]
+        [Display(Name = "せい　")]
         public string ENameSeiKana { get; set; }
-        [Display(Name = "(めい)")]
+        [Display(Name = "めい　")]
         public string ENameNamaeKana { get; set; }
         [Display(Name = "年齢")]
         public string ENenrei { get; set; }
-        [Display(Name = "自宅最寄り駅(路線-駅)")]
+        [Display(Name = "路線")]
         public string EJitakuRosen { get; set; }
         [Display(Name = "駅")]
         public string EJitakuMoyorieki { get; set; }
@@ -41,9 +41,9 @@ namespace CSTEntryForm02a.Models
         [Display(Name = "電話")]
         public string EPhone { get; set; }
         [Display(Name = "個人面談日 第一希望")]
-        public DateTime? EMendan1Date { get; set; }
+        public string EMendan1Date { get; set; }
 
-        [Display(Name = "AMPM")]
+        [Display(Name = "午前/午後")]
         public string EMendan1Ampm { get; set; }
        
 
@@ -54,20 +54,22 @@ namespace CSTEntryForm02a.Models
         //}
 
         [Display(Name = "個人面談日 第二希望")]
-        public DateTime? EMendan2Date { get; set; }
-        [Display(Name = "AMPM")]
+        public string EMendan2Date { get; set; }
+        [Display(Name = "午前/午後")]
         public string EMendan2Ampm { get; set; }
         [Display(Name = "個人面談日 第三希望")]
-        public DateTime? EMendan3Date { get; set; }
-        [Display(Name = "AMPM")]
+        public string EMendan3Date { get; set; }
+        [Display(Name = "午前/午後")]
         public string EMendan3Ampm { get; set; }
         [Display(Name = "質問・要望など")]
         public string EQuestion { get; set; }
+
+        ////LocalDb用のCreate(TimeStamp無し)
         [Display(Name = "記入日")]
         public DateTime? ETimeStamp { get; set; }
 
     }
 
-   
+
 
 }

@@ -1,0 +1,313 @@
+@model IEnumerable<CSTEntryForm02a.Models.TEntryMeibo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>New Registration</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ENameSei)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENameNamae)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENameSeiKana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENameNamaeKana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENenrei)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EPhone)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.EJitakuRosen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EJitakuMoyorieki)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EJitakuToEki)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.EShigotoKibou)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.EMendan1Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMendan1Ampm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMendan2Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMendan2Ampm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMendan3Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMendan3Ampm)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.EQuestion)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENameSei)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENameNamae)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENameSeiKana)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENameNamaeKana)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENenrei)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EPhone)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.EJitakuRosen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EJitakuMoyorieki)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EJitakuToEki)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.EShigotoKibou)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMendan1Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMendan1Ampm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMendan2Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMendan2Ampm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMendan3Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMendan3Ampm)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.EQuestion)
+                </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@*<table class="table">
+@foreach (var item in Model)
+{
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ENameSei)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENameSei)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ENameNamae)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENameNamae)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ENameSeiKana)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENameSeiKana)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ENameNamaeKana)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENameNamaeKana)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ENenrei)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENenrei)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EJitakuRosen)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EJitakuRosen)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EJitakuMoyorieki)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EJitakuMoyorieki)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EJitakuToEki)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EJitakuToEki)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EShigotoKibou)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EShigotoKibou)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EEmail)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EEmail)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EPhone)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EPhone)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMendan1Date)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMendan1Date)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMendan1Ampm)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMendan1Ampm)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMendan2Date)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMendan2Date)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMendan2Ampm)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMendan2Ampm)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMendan3Date)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMendan3Date)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMendan3Ampm)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMendan3Ampm)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EQuestion)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.EQuestion)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ETimeStamp)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.ETimeStamp)
+        </td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+    </tr>
+}
+</table>*@
+
