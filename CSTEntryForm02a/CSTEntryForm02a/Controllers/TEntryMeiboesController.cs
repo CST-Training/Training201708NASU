@@ -237,7 +237,7 @@ namespace CSTEntryForm02a.Controllers
 
                 //_context.Add(tEntryMeibo);
                 //await _context.SaveChangesAsync();
-                
+
 
                 //if (soshin == "入力内容を確認")
                 //{
@@ -262,12 +262,12 @@ namespace CSTEntryForm02a.Controllers
                 //else
                 //{
 
-                    ////CST228 または Azure　での「記録ファイル」へのパス
-                    //string path = @"/エントリー/エントリー.txt";
+                ////CST228 または Azure　での「記録ファイル」へのパス
+                string path = @"/エントリー/エントリー.txt";
 
 
-                    ////Local　の「記録ファイル」へのパス
-                    string path = @"c:\エントリー\エントリー.txt";
+                ////Local　の「記録ファイル」へのパス
+                //string path = @"c:\エントリー\エントリー.txt";
                     using (var s = new FileStream(path, FileMode.Append))
                     {
 
