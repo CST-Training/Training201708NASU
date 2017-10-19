@@ -25,7 +25,7 @@
 </head>
 
 
-<h2>Confirmation Page</h2>
+<h2>CST Entry Form</h2>
 
 <form name="entryform" asp-action="Details">
     <div>
@@ -82,18 +82,11 @@
                 <input type="hidden" asp-for="EJitakuMoyorieki" name="EJitakuMoyorieki" />
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.EJitakuToEki_Koutsu)
+                @Html.DisplayNameFor(model => model.EJitakuToEki)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.EJitakuToEki_Koutsu)
-                <input type="hidden" asp-for="EJitakuToEki_Koutsu" name="EJitakuToEki_Koutsu" />       
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EJitakuToEki_Jikan)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EJitakuToEki_Jikan)
-                <input type="hidden" asp-for="EJitakuToEki_Jikan" name="EJitakuToEki_Jikan" />
+                @Html.DisplayFor(model => model.EJitakuToEki)
+                <input type="hidden" asp-for="EJitakuToEki" name="EJitakuToEki" />
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.EShigotoKibou)
@@ -117,25 +110,11 @@
                 <input type="hidden" asp-for="EPhone" name="EPhone" />
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.EMendan1Tsuki)
+                @Html.DisplayNameFor(model => model.EMendan1Date)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.EMendan1Tsuki)
-                <input type="hidden" asp-for="EMendan1Tsuki" name="EMendan1Tsuki" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EMendan1Hi)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EMendan1Hi)
-                <input type="hidden" asp-for="EMendan1Hi" name="EMendan1Hi" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EMendan1Youbi)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EMendan1Youbi)
-                <input type="hidden" asp-for="EMendan1Youbi" name="EMendan1Youbi" />
+                @Html.DisplayFor(model => model.EMendan1Date)
+                <input type="hidden" asp-for="EMendan1Date" name="EMendan1Date" />
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.EMendan1Ampm)
@@ -145,25 +124,11 @@
                 <input type="hidden" asp-for="EMendan1Ampm" name="EMendan1Ampm" />
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.EMendan2Tsuki)
+                @Html.DisplayNameFor(model => model.EMendan2Date)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.EMendan2Tsuki)
-                <input type="hidden" asp-for="EMendan2Tsuki" name="EMendan2Tsuki" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EMendan2Hi)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EMendan2Hi)
-                <input type="hidden" asp-for="EMendan2Hi" name="EMendan2Hi" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EMendan2Youbi)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EMendan2Youbi)
-                <input type="hidden" asp-for="EMendan2Youbi" name="EMendan2Youbi" />
+                @Html.DisplayFor(model => model.EMendan2Date)
+                <input type="hidden" asp-for="EMendan2Date" name="EMendan2Date" />
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.EMendan2Ampm)
@@ -173,25 +138,11 @@
                 <input type="hidden" asp-for="EMendan2Ampm" name="EMendan2Ampm" />
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.EMendan3Tsuki)
+                @Html.DisplayNameFor(model => model.EMendan3Date)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.EMendan3Tsuki)
-                <input type="hidden" asp-for="EMendan3Tsuki" name="EMendan3Tsuki" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EMendan3Hi)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EMendan3Hi)
-                <input type="hidden" asp-for="EMendan3Hi" name="EMendan3Hi" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EMendan3Youbi)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EMendan3Youbi)
-                <input type="hidden" asp-for="EMendan3Youbi" name="EMendan3Youbi" />
+                @Html.DisplayFor(model => model.EMendan3Date)
+                <input type="hidden" asp-for="EMendan3Date" name="EMendan3Date" />
             </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.EMendan3Ampm)
@@ -215,11 +166,9 @@
                 </dd>*@
         </dl>
         <p>
-            @*<INPUT type="button" value="Back" onClick="history.back()" class="grid2 item_height16 btn btn-default">*@
+            <INPUT type="button" value="Back" onClick="history.back()" class="grid2 item_height16 btn btn-default">
 
-            @*<input asp-action="Create" type="submit"  value="Back" class="grid1 item_height16 btn btn-default" />*@
-
-            <input asp-action="Create" asp-route-id="-3" type="submit" value="Back" class="grid1 item_height16 btn btn-default" />
+            @*<input type="submit" asp-action="Create" asp-route-id="null"  style="position: absolute; left: 20%" onclick="return check3()" value="OK" class="grid2 item_height16 btn btn-default" />*@
 
             @*<a asp-action="Create">Finish and Create New</a>*@
 

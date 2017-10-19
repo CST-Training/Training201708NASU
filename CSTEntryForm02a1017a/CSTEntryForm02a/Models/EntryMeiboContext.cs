@@ -13,9 +13,9 @@ namespace CSTEntryForm02a.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            //optionsBuilder.UseSqlServer(@"Server=(localdb)\v11.0;Database=EntryMeibo;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\v11.0;Database=EntryMeibo;Trusted_Connection=True");
             //optionsBuilder.UseSqlServer(@"Server=CST228\SQLEXPRESS;Database=EntryMeibo;User ID=sa;Password=sql#228;Trusted_Connection=False");
-            optionsBuilder.UseSqlServer(@"Server=PayCSTSrv2016A\SQLEXPRESS;Database=EntryMeibo;User ID=sa;Password=sql#CST;Trusted_Connection=False");
+            //optionsBuilder.UseSqlServer(@"Server=PayCSTSrv2016A\SQLEXPRESS;Database=EntryMeibo;User ID=sa;Password=sql#CST;Trusted_Connection=False");
 
         }
 

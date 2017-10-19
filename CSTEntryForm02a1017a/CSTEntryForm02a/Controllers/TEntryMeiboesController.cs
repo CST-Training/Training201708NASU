@@ -19,7 +19,9 @@ namespace CSTEntryForm02a.Controllers
     public class TEntryMeiboesController : Controller
     {
 
-        
+        int idnew;
+
+
         private readonly EntryMeiboContext _context;
 
         public TEntryMeiboesController(EntryMeiboContext context)
@@ -136,22 +138,22 @@ namespace CSTEntryForm02a.Controllers
                     ejitakutoeki = ejitakutoeki_koutsu;
                     ejitakutoeki += ejitakutoeki_jikan;
 
-                    //var kibou = Request.Form["EKibou_textarea"];
-                    //var question = Request.Form["EQ_textarea"];
+                    var kibou = Request.Form["EKibou_textarea"];
+                    var question = Request.Form["EQ_textarea"];
 
-                    //tEntryMeibo.EShigotoKibou = kibou;
-                    //tEntryMeibo.EQuestion = question;
+                    tEntryMeibo.EShigotoKibou = kibou;
+                    tEntryMeibo.EQuestion = question;
                     tEntryMeibo.ETimeStamp = localdate;
 
                     if (ModelState.IsValid)
                     {
 
                         ////CST228 または Azure　での「記録ファイル」へのパス
-                        string path = @"/エントリー/エントリー.txt";
+                        //string path = @"/エントリー/エントリー.txt";
 
 
                         ////Local　の「記録ファイル」へのパス
-                        //string path = @"c:\エントリー\エントリー.txt";
+                        string path = @"c:\エントリー\エントリー.txt";
                         using (var s = new FileStream(path, FileMode.Append))
                         {
 
@@ -207,125 +209,166 @@ namespace CSTEntryForm02a.Controllers
             return View();
         }
 
-
-
         // POST: TEntryMeiboes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, string EMendan2Am, string EMendan2Pm, string EMendan3Am, string EMendan3Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
-        public async Task<IActionResult> Create(int? id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Youbi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Youbi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Youbi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Create([Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Youbi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Youbi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Youbi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
-            ViewBag.Id = id;
-            var formdata1 = Request.Form;
 
-            if (id != -3)
+            var formdata = Request.Form;
+
+            var ejitakutoeki_koutsu = Request.Form["EJitakuToEki_Koutsu"];
+            var ejitakutoeki_jikan = Request.Form["EJitakuToEki_Jikan"];
+           
+            var emendan1tsuki = Request.Form["EMendan1Tsuki"];
+            var emendan1hi = Request.Form["EMendan1Hi"];
+            var emendan1youbi = Request.Form["EMendan1Youbi"];
+            var emendan2tsuki = Request.Form["EMendan2Tsuki"];
+            var emendan2hi = Request.Form["EMendan2Hi"];
+            var emendan2youbi = Request.Form["EMendan2Youbi"];
+            var emendan3tsuki = Request.Form["EMendan3Tsuki"];
+            var emendan3hi = Request.Form["EMendan3Hi"];
+            var emendan3youbi = Request.Form["EMendan3Youbi"];
+
+            var emendan1date = "";
+            var emendan2date = "";
+            var emendan3date = ""; 
+
+            var ejitakutoeki = "";
+
+            emendan1date = emendan1tsuki;
+            emendan1date += emendan1hi;
+            emendan1date += emendan1youbi;
+            emendan2date = emendan2tsuki;
+            emendan2date += emendan2hi;
+            emendan2date += emendan2youbi;
+            emendan3date = emendan3tsuki;
+            emendan3date += emendan3hi;
+            emendan3date += emendan3youbi;
+
+            ejitakutoeki = ejitakutoeki_koutsu;
+            ejitakutoeki += ejitakutoeki_jikan;
+
+            var kibou = Request.Form["EKibou_textarea"];
+            var question = Request.Form["EQ_textarea"];
+            var localdate = DateTime.Now;
+
+            tEntryMeibo.EShigotoKibou = kibou;
+            tEntryMeibo.EQuestion = question;
+            tEntryMeibo.ETimeStamp = localdate;
+
+
+            
+            if (ModelState.IsValid)
             {
-                var ejitakutoeki_koutsu = Request.Form["EJitakuToEki_Koutsu"];
-                var ejitakutoeki_jikan = Request.Form["EJitakuToEki_Jikan"];
 
-                var emendan1tsuki = Request.Form["EMendan1Tsuki"];
-                var emendan1hi = Request.Form["EMendan1Hi"];
-                var emendan1youbi = Request.Form["EMendan1Youbi"];
-                var emendan2tsuki = Request.Form["EMendan2Tsuki"];
-                var emendan2hi = Request.Form["EMendan2Hi"];
-                var emendan2youbi = Request.Form["EMendan2Youbi"];
-                var emendan3tsuki = Request.Form["EMendan3Tsuki"];
-                var emendan3hi = Request.Form["EMendan3Hi"];
-                var emendan3youbi = Request.Form["EMendan3Youbi"];
-
-                var emendan1date = "";
-                var emendan2date = "";
-                var emendan3date = "";
-
-                var ejitakutoeki = "";
-
-                emendan1date = emendan1tsuki;
-                emendan1date += emendan1hi;
-                emendan1date += emendan1youbi;
-                emendan2date = emendan2tsuki;
-                emendan2date += emendan2hi;
-                emendan2date += emendan2youbi;
-                emendan3date = emendan3tsuki;
-                emendan3date += emendan3hi;
-                emendan3date += emendan3youbi;
-
-                ejitakutoeki = ejitakutoeki_koutsu;
-                ejitakutoeki += ejitakutoeki_jikan;
-
-                var localdate = DateTime.Now;
-
-                tEntryMeibo.ETimeStamp = localdate;
+                //_context.Add(tEntryMeibo);
+                //await _context.SaveChangesAsync();
 
 
-                if (ModelState.IsValid)
-                {
+                //if (soshin == "入力内容を確認")
+                //{
 
-                    //_context.Add(tEntryMeibo);
-                    //await _context.SaveChangesAsync();
+                //    var id = tEntryMeibo.Id;
+                //    idnew = id;
+
+                //    List<string> inputs = new List<string>();
+                //    inputs.Add(enamesei);
+                //    inputs.Add(enamenamae);
+                //    inputs.Add(enameseikana);
+                //    inputs.Add(enamenamaekana);
+
+                //    ViewData["Review"] = new SelectList(inputs);
+
+
+                //    return RedirectToAction("Review");
 
 
 
-                    ////CST228 または Azure　での「記録ファイル」へのパス
-                    string path = @"/エントリー/エントリー.txt";
+                //}
+                //else
+                //{
+
+                ////CST228 または Azure　での「記録ファイル」へのパス
+                //string path = @"/エントリー/エントリー.txt";
 
 
-                    ////Local　の「記録ファイル」へのパス
-                    //string path = @"c:\エントリー\エントリー.txt";
-                    using (var s = new FileStream(path, FileMode.Append))
+                ////Local　の「記録ファイル」へのパス
+                string path = @"c:\エントリー\エントリー.txt";
+                using (var s = new FileStream(path, FileMode.Append))
                     {
-                        using (var sw = new StreamWriter(s))
-                        {
-                            sw.WriteLine(DateTime.Now + "\t" +
-                                         tEntryMeibo.ENameSei + "\t" +
-                                         tEntryMeibo.ENameNamae + "\t" +
-                                         tEntryMeibo.ENameSeiKana + "\t" +
-                                         tEntryMeibo.ENameNamaeKana + "\t" +
-                                         tEntryMeibo.ENenrei + "\t" +
-                                         tEntryMeibo.EJitakuRosen + "\t" +
-                                         tEntryMeibo.EJitakuMoyorieki + "\t" +
-                                         ejitakutoeki + "\t" +
-                                         tEntryMeibo.EShigotoKibou + "\t" +
-                                         tEntryMeibo.EEmail + "\t" +
-                                         tEntryMeibo.EPhone + "\t" +
-                                         emendan1date + "\t" +
-                                         tEntryMeibo.EMendan1Ampm + "\t" +
-                                         emendan2date + "\t" +
-                                         tEntryMeibo.EMendan2Ampm + "\t" +
-                                         emendan3date + "\t" +
-                                         tEntryMeibo.EMendan3Ampm + "\t" +
-                                         tEntryMeibo.EQuestion + "\t" +
+                    using (var sw = new StreamWriter(s))
+                    {
+                        sw.WriteLine(DateTime.Now + "\t" +
+                                     tEntryMeibo.ENameSei + "\t" +
+                                     tEntryMeibo.ENameNamae + "\t" +
+                                     tEntryMeibo.ENameSeiKana + "\t" +
+                                     tEntryMeibo.ENameNamaeKana + "\t" +
+                                     tEntryMeibo.ENenrei + "\t" +
+                                     tEntryMeibo.EJitakuRosen + "\t" +
+                                     tEntryMeibo.EJitakuMoyorieki + "\t" +
+                                     ejitakutoeki + "\t" +
+                                     tEntryMeibo.EShigotoKibou + "\t" +
+                                     tEntryMeibo.EEmail + "\t" +
+                                     tEntryMeibo.EPhone + "\t" +
+                                     emendan1date + "\t" +
+                                     tEntryMeibo.EMendan1Ampm + "\t" +
+                                     emendan2date + "\t" +
+                                     tEntryMeibo.EMendan2Ampm + "\t" +
+                                     emendan3date + "\t" +
+                                     tEntryMeibo.EMendan3Ampm + "\t" +
+                                     tEntryMeibo.EQuestion + "\t" +
 
-                                         "END"
-                                         );
-                            sw.Dispose();
-                        }
-
+                                     "END"
+                                     );
+                        sw.Dispose();
                     }
 
-                    _context.Add(tEntryMeibo);
-                    await _context.SaveChangesAsync();
 
+                    //using (var sw = new StreamWriter(s))
+                    //{
+                    //    sw.WriteLine(DateTime.Now + "\t" +
+                    //                 enamesei + "\t" +
+                    //                 enamenamae + "\t" +
+                    //                 enameseikana + "\t" +
+                    //                 enamenamaekana + "\t" +
+                    //                 enenrei + "\t" +
+                    //                 ejitakurosen + "\t" +
+                    //                 ejitakumoyorieki + "\t" +
+                    //                 ejitakutoeki + "\t" +
+                    //                 kibou + "\t" +
+                    //                 eemail + "\t" +
+                    //                 ephone + "\t" +
+                    //                 emendan1date + "\t" +
+                    //                 emendan1ampm + "\t" +
+                    //                 emendan2date + "\t" +
+                    //                 emendan2ampm + "\t" +
+                    //                 emendan3date + "\t" +
+                    //                 emendan3ampm + "\t" +
+                    //                 question + "\t" +
 
-                    ////return RedirectToAction("Index");
-                    return RedirectToAction("Create");
+                    //                 "END"
+                    //                 );
+                    //    sw.Dispose();
+                    //}
                 }
-                //}
-            }
-            else
-            {
-                var formdata2 = Request.Form;
 
-                var localdate = DateTime.Now;
-                                
-                tEntryMeibo.ETimeStamp = localdate;
-            }
-        
+                _context.Add(tEntryMeibo);
+                await _context.SaveChangesAsync();
 
+
+                ////return RedirectToAction("Index");
+                return RedirectToAction("Create");
+                }
+
+                
+            //}
             return View(tEntryMeibo);
+
         }
-        
 
 
         // GET: TEntryMeiboes/Edit/5
@@ -350,35 +393,33 @@ namespace CSTEntryForm02a.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Youbi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Youbi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Youbi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
             if (id != tEntryMeibo.Id)
             {
                 return NotFound();
             }
 
-           if (ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                try
                 {
-                    try
-                    {
-                        _context.Update(tEntryMeibo);
-                        await _context.SaveChangesAsync();
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        if (!TEntryMeiboExists(tEntryMeibo.Id))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            throw;
-                        }
-                    }
-                    return RedirectToAction("Index");
+                    _context.Update(tEntryMeibo);
+                    await _context.SaveChangesAsync();
                 }
-
-           
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TEntryMeiboExists(tEntryMeibo.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Index");
+            }
             return View(tEntryMeibo);
         }
 

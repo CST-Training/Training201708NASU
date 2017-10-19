@@ -3,7 +3,20 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<head>
+    <script type="text/javascript">
+    <!--
+        function check1() {
+            alert("確認画面へ移動します。少々お待ちください。");
+            return true;
+        }
+   
+    // -->
 
+    </script>
+
+
+</head>
 <h2>Edit</h2>
 
 <form asp-action="Edit">
@@ -196,9 +209,9 @@
     </div>
 </form>
 
-@*<div>
+<div>
     <a asp-action="Index">Back to List</a>
-</div>*@
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

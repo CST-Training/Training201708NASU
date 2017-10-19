@@ -11,7 +11,7 @@
     <h4>TEntryMeibo</h4>
     <hr />
     <dl class="dl-horizontal">
-        <input type="hidden" asp-for="Id" />
+        @*<input type="hidden" asp-for="Id" />*@
         <dt>
             @Html.DisplayNameFor(model => model.ENameSei)
         </dt>
@@ -55,10 +55,16 @@
             @Html.DisplayFor(model => model.EJitakuMoyorieki)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EJitakuToEki)
+            @Html.DisplayNameFor(model => model.EJitakuToEki_Koutsu)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EJitakuToEki)
+            @Html.DisplayFor(model => model.EJitakuToEki_Koutsu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EJitakuToEki_Jikan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EJitakuToEki_Jikan)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EShigotoKibou)
@@ -79,10 +85,22 @@
             @Html.DisplayFor(model => model.EPhone)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EMendan1Date)
+            @Html.DisplayNameFor(model => model.EMendan1Tsuki)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EMendan1Date)
+            @Html.DisplayFor(model => model.EMendan1Tsuki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Hi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Hi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan1Youbi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan1Youbi)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EMendan1Ampm)
@@ -91,10 +109,22 @@
             @Html.DisplayFor(model => model.EMendan1Ampm)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EMendan2Date)
+            @Html.DisplayNameFor(model => model.EMendan2Tsuki)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EMendan2Date)
+            @Html.DisplayFor(model => model.EMendan2Tsuki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Hi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Hi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan2Youbi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan2Youbi)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EMendan2Ampm)
@@ -103,10 +133,22 @@
             @Html.DisplayFor(model => model.EMendan2Ampm)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EMendan3Date)
+            @Html.DisplayNameFor(model => model.EMendan3Tsuki)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EMendan3Date)
+            @Html.DisplayFor(model => model.EMendan3Tsuki)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Hi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Hi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMendan3Youbi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMendan3Youbi)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.EMendan3Ampm)
