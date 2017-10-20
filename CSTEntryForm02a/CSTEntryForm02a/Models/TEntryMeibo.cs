@@ -46,8 +46,8 @@ namespace CSTEntryForm02a.Models
         public string EMendan1Tsuki { get; set; }
         [Display(Name = "個人面談 第一希望日")]
         public string EMendan1Hi { get; set; }
-        [Display(Name = "個人面談 曜日")]
-        public string EMendan1Youbi { get; set; }
+        //[Display(Name = "個人面談 曜日")]
+        //public string EMendan1Youbi { get; set; }
         [Display(Name = "午前/午後")]
         public string EMendan1Ampm { get; set; }
        
@@ -62,16 +62,16 @@ namespace CSTEntryForm02a.Models
         public string EMendan2Tsuki { get; set; }
         [Display(Name = "個人面談 第二希望日")]
         public string EMendan2Hi { get; set; }
-        [Display(Name = "個人面談 曜日")]
-        public string EMendan2Youbi { get; set; }
+        //[Display(Name = "個人面談 曜日")]
+        //public string EMendan2Youbi { get; set; }
         [Display(Name = "午前/午後")]
         public string EMendan2Ampm { get; set; }
         [Display(Name = "個人面談 第三希望月")]
         public string EMendan3Tsuki { get; set; }
         [Display(Name = "個人面談 第三希望日")]
         public string EMendan3Hi { get; set; }
-        [Display(Name = "個人面談 曜日")]
-        public string EMendan3Youbi { get; set; }
+        //[Display(Name = "個人面談 曜日")]
+        //public string EMendan3Youbi { get; set; }
         [Display(Name = "午前/午後")]
         public string EMendan3Ampm { get; set; }
         [Display(Name = "質問・要望など")]

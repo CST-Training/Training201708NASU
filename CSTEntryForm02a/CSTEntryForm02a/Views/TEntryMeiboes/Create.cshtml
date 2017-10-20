@@ -7,8 +7,12 @@
 <head>
     <script type="text/javascript">
     <!--
-  
-    function check1() {
+
+        function check1() {
+
+            var text_equestion = document.entryform.EQuestion.value;
+
+
         if (document.entryform.ENameSei.value == null || document.entryform.ENameSei.value == ""
             || document.entryform.ENameNamae.value == null || document.entryform.ENameNamae.value == ""
             || document.entryform.ENameSeiKana.value == null || document.entryform.ENameSeiKana.value == ""
@@ -18,6 +22,7 @@
         ) {
             alert("必須項目を入力して下さい。");
             return false;
+
         } else {
             alert("確認画面へ移動します。少々お待ちください。");
             return true;
@@ -189,12 +194,12 @@
         <div class="grid3">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSei" class="form-control" placeholder="姓" value="" />　　<input style="display: inline; " asp-for="ENameNamae" class="form-control" placeholder="名" value="" />*@
-            <input name="ENameSei" asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16"  />
+            <input type="text" maxlength="20" name="ENameSei" asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16"  />
             <span asp-validation-for="ENameSei" class="text-danger"></span>
             
         </div>
         <div class="grid3 ">
-            <input name="ENameNamae" asp-for="ENameNamae" placeholder="名" class="grid3 item_height16" />
+            <input type="text" maxlength="20" name="ENameNamae" asp-for="ENameNamae" placeholder="名" class="grid3 item_height16" />
             <span asp-validation-for="ENameNamae" class="text-danger"></span>
         </div>
 
@@ -209,11 +214,11 @@
         <div class="grid3">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSeiKana" class="form-control" placeholder="せい" value="" />　　<input style="display: inline;" asp-for="ENameNamaeKana" class="form-control" placeholder="めい" value="" />*@
-            <input name="ENameSeiKana" asp-for="ENameSeiKana" placeholder="せい" class="grid3 item_height16 "  />
+            <input type="text" maxlength="20" name="ENameSeiKana" asp-for="ENameSeiKana" placeholder="せい" class="grid3 item_height16 "  />
             <span asp-validation-for="ENameSeiKana" class="text-danger"></span>
         </div>
         <div class="grid3">
-            <input name="ENameNamaeKana" asp-for="ENameNamaeKana" placeholder="めい" class="grid3 item_height16 "  />
+            <input type="text" maxlength="20" name="ENameNamaeKana" asp-for="ENameNamaeKana" placeholder="めい" class="grid3 item_height16 "  />
             <span asp-validation-for="ENameNamaeKana" class="text-danger"></span>
         </div>
 
@@ -223,7 +228,7 @@
         </div>
         <div class="grid1 ">
             @*<div class="col-md-2">*@
-            <input name="ENenrei" asp-for="ENenrei"　style = "text-align : left;" class="grid1 item_height16 " placeholder="歳"　/>
+            <input type="text" maxlength="20" name="ENenrei" asp-for="ENenrei"　style = "text-align : left;" class="grid1 item_height16 " placeholder="歳"　/>
             <span asp-validation-for="ENenrei" class="text-danger"></span>
         </div>
 
@@ -234,11 +239,11 @@
         @*<div class="col-md-10">*@
         <div class="grid3">
             @*<input style="display: inline; float: left;" asp-for="EJitakuRosen" class="form-control" placeholder="路線名" value="" />線　-　<input style="display: inline;" 　asp-for="EJitakuMoyorieki" class="form-control" placeholder="駅名" value="" />駅*@
-            <input name="EJitakuRosen" asp-for="EJitakuRosen" placeholder="路線名" class="grid3 item_height16 "  />
+            <input type="text" maxlength="50" name="EJitakuRosen" asp-for="EJitakuRosen" placeholder="路線名" class="grid3 item_height16 "  />
             <span asp-validation-for="EJitakuRosen" class="text-danger"></span>
         </div>
         <div class="grid3">
-            <input name="EJitakuMoyorieki" asp-for="EJitakuMoyorieki" placeholder="駅名" class="grid3 item_height16 "  />
+            <input type="text" maxlength="50" name="EJitakuMoyorieki" asp-for="EJitakuMoyorieki" placeholder="駅名" class="grid3 item_height16 "  />
             <span asp-validation-for="EJitakuMoyorieki" class="text-danger"></span>
         </div>
         <div class="grid2 first">
@@ -252,7 +257,7 @@
         <div class="grid2 item_height16 ">
                 <select name="EJitakuToEki_Koutsu" asp-for="EJitakuToEki_Koutsu" style="text-align: center;" class="grid2 item_height16">
                     @*<option value="-">@Html.DisplayFor(model => model.EJitakuToEki_Koutsu)</option>*@
-                    <option value="-">未選択</option>
+                    <option value="-">交通手段</option>
                     <option value="徒歩">徒歩</option>
                     <option value="バス" >バス</option>
                     <option value="その他">その他</option>
@@ -285,7 +290,7 @@
         </div>
         <div class="grid4 item_height60 ">
             @*<div class="col-md-10">*@
-            <textarea name="EShigotoKibou" class="grid4 item_height60 "　asp-for="EShigotoKibou" placeholder="希望する仕事はなんですか？" ></textarea>
+            <textarea type="text" maxlength="400" name="EShigotoKibou" class="grid4 item_height60 "　asp-for="EShigotoKibou" placeholder="希望する仕事はなんですか？ (400字まで)" ></textarea>
             <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
         </div>
 
@@ -295,7 +300,7 @@
         </div>
         <div class="grid4">
             @*<div class="col-md-10">*@
-            <input name="EEmail" asp-for="EEmail" placeholder="メール　アドレス"  class="grid4 item_height16 "  />
+            <input type="text" maxlength="50" name="EEmail" asp-for="EEmail" placeholder="メール　アドレス"  class="grid4 item_height16 "  />
             <span asp-validation-for="EEmail" class="text-danger"></span>
         </div>
 
@@ -305,7 +310,7 @@
         </div>
         <div class="grid4">
             @*<div class="col-md-10">*@
-            <input name="EPhone" asp-for="EPhone" placeholder="例: 0356887301 ハイフンなし" class="grid4 item_height16 " />
+            <input type="text" maxlength="50" name="EPhone" asp-for="EPhone" placeholder="例: 0356887301 ハイフンなし" class="grid4 item_height16 " />
             <span asp-validation-for="EPhone" class="text-danger"></span>
         </div>
 
@@ -368,7 +373,7 @@
             </select>
             <span asp-validation-for="EMendan1Hi" class="text-danger"></span>
         </div>
-        <div class="grid1 item_height16 ">
+        @*<div class="grid1 item_height16 ">
             <select name="EMendan1Youbi" asp-for="EMendan1Youbi" style="text-align: center;" class="grid1 item_height16 " >
                 <option value="-">曜日</option>
                 <option value="(月)">月曜</option>
@@ -378,7 +383,7 @@
                 <option value="(金)">金曜</option>
             </select>
             <span asp-validation-for="EMendan1Youbi" class="text-danger"></span>
-        </div>
+        </div>*@
         <div class="grid2 item_height16 ">
             <select name="EMendan1Ampm" asp-for="EMendan1Ampm" style="text-align: center;" class="grid2 item_height16 ">
                 <option value="-">AM? PM?</option>
@@ -407,7 +412,7 @@
             <label asp-for="EMendan2Hi" class="grid2 item_height16"></label>
         </div>
         <div class="grid1 item_height16 ">
-            <select name="EMendan2Tsuki" asp-for="EMendan1Tsuki" style="text-align: center;" class="grid1 item_height16 ">
+            <select name="EMendan2Tsuki" asp-for="EMendan2Tsuki" style="text-align: center;" class="grid1 item_height16 ">
                 <option value="-">月</option>
                 <option value="1月">1月</option>
                 <option value="2月">2月</option>
@@ -461,7 +466,7 @@
             </select>
             <span asp-validation-for="EMendan2Hi" class="text-danger"></span>
         </div>
-        <div class="grid1 item_height16 ">
+        @*<div class="grid1 item_height16 ">
             <select name="EMendan2Youbi" asp-for="EMendan2Youbi" style="text-align: center;" class="grid1 item_height16 ">
                 <option value="-">曜日</option>
                 <option value="(月)">月曜</option>
@@ -471,7 +476,7 @@
                 <option value="(金)">金曜</option>
             </select>
             <span asp-validation-for="EMendan2Youbi" class="text-danger"></span>
-        </div>
+        </div>*@
         <div class="grid2 item_height16 ">
             <select name="EMendan2Ampm" asp-for="EMendan2Ampm" style="text-align: center;" class="grid2 item_height16 ">
                 <option value="-">AM? PM?</option>
@@ -558,7 +563,7 @@
             </select>
             <span asp-validation-for="EMendan3Hi" class="text-danger"></span>
         </div>
-        <div class="grid1 item_height16 ">
+        @*<div class="grid1 item_height16 ">
             <select name="EMendan3Youbi" asp-for="EMendan3Youbi" style="text-align: center;" class="grid1 item_height16 ">
                 <option value="-">曜日</option>
                 <option value="(月)">月曜</option>
@@ -568,7 +573,7 @@
                 <option value="(金)">金曜</option>
             </select>
             <span asp-validation-for="EMendan3Youbi" class="text-danger"></span>
-        </div>
+        </div>*@
         <div class="grid2 item_height16 ">
             <select name="EMendan3Ampm" asp-for="EMendan3Ampm" style="text-align: center;" class="grid2 item_height16 ">
                 <option value="-">AM? PM?</option>
@@ -608,7 +613,7 @@
         @*<div>*@
         <div class="grid8 item_height160 colspan2">
             @*<div class="col-md-10">*@
-            <textarea name="EQuestion" class="grid8 item_height160 colspan2" asp-for="EQuestion"　 placeholder="質問.要望など、自由にお書きください。   (400字まで)"></textarea>
+            <textarea type="text" maxlength="400" name="EQuestion" class="grid8 item_height160 colspan2" asp-for="EQuestion"　 placeholder="質問.要望など、自由にお書きください。   (400字まで)"></textarea>
             <span asp-validation-for="EQuestion" class="text-danger"></span>
         </div>
 
@@ -622,7 +627,7 @@
         <p>
         @*<div class="grid2">*@
 
-            <input type="submit" onclick="return check2()" value="登録 (確認済み)" class="grid2 item_height16 btn btn-default" style="position: relative; left: 10px"/>
+            @*<input type="submit" onclick="return check2()" value="登録 (確認済み)" class="grid2 item_height16 btn btn-default" style="position: relative; left: 10px"/>*@
 
 
         @*</div>*@

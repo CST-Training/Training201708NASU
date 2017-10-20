@@ -84,15 +84,15 @@ namespace CSTEntryForm02a.Controllers
                 tEntryMeibo.EPhone = Request.Form["EPhone"];
                 tEntryMeibo.EMendan1Tsuki = Request.Form["EMendan1Tsuki"];
                 tEntryMeibo.EMendan1Hi = Request.Form["EMendan1Hi"];
-                tEntryMeibo.EMendan1Youbi = Request.Form["EMendan1Youbi"];
+                //tEntryMeibo.EMendan1Youbi = Request.Form["EMendan1Youbi"];
                 tEntryMeibo.EMendan1Ampm = Request.Form["EMendan1Ampm"];
                 tEntryMeibo.EMendan2Tsuki = Request.Form["EMendan2Tsuki"];
                 tEntryMeibo.EMendan2Hi = Request.Form["EMendan2Hi"];
-                tEntryMeibo.EMendan2Youbi = Request.Form["EMendan2Youbi"];
+                //tEntryMeibo.EMendan2Youbi = Request.Form["EMendan2Youbi"];
                 tEntryMeibo.EMendan2Ampm = Request.Form["EMendan2Ampm"];
                 tEntryMeibo.EMendan3Tsuki = Request.Form["EMendan3Tsuki"];
                 tEntryMeibo.EMendan3Hi = Request.Form["EMendan3Hi"];
-                tEntryMeibo.EMendan3Youbi = Request.Form["EMendan3Youbi"];
+                //tEntryMeibo.EMendan3Youbi = Request.Form["EMendan3Youbi"];
                 tEntryMeibo.EMendan3Ampm = Request.Form["EMendan3Ampm"];
                 tEntryMeibo.EQuestion = Request.Form["EQuestion"];
                 tEntryMeibo.ETimeStamp = localdate;
@@ -109,13 +109,13 @@ namespace CSTEntryForm02a.Controllers
 
                     var emendan1tsuki = Request.Form["EMendan1Tsuki"];
                     var emendan1hi = Request.Form["EMendan1Hi"];
-                    var emendan1youbi = Request.Form["EMendan1Youbi"];
+                    //var emendan1youbi = Request.Form["EMendan1Youbi"];
                     var emendan2tsuki = Request.Form["EMendan2Tsuki"];
                     var emendan2hi = Request.Form["EMendan2Hi"];
-                    var emendan2youbi = Request.Form["EMendan2Youbi"];
+                    //var emendan2youbi = Request.Form["EMendan2Youbi"];
                     var emendan3tsuki = Request.Form["EMendan3Tsuki"];
                     var emendan3hi = Request.Form["EMendan3Hi"];
-                    var emendan3youbi = Request.Form["EMendan3Youbi"];
+                    //var emendan3youbi = Request.Form["EMendan3Youbi"];
 
                     var emendan1date = "";
                     var emendan2date = "";
@@ -125,13 +125,13 @@ namespace CSTEntryForm02a.Controllers
 
                     emendan1date = emendan1tsuki;
                     emendan1date += emendan1hi;
-                    emendan1date += emendan1youbi;
+                    //emendan1date += emendan1youbi;
                     emendan2date = emendan2tsuki;
                     emendan2date += emendan2hi;
-                    emendan2date += emendan2youbi;
+                    //emendan2date += emendan2youbi;
                     emendan3date = emendan3tsuki;
                     emendan3date += emendan3hi;
-                    emendan3date += emendan3youbi;
+                    //emendan3date += emendan3youbi;
 
                     ejitakutoeki = ejitakutoeki_koutsu;
                     ejitakutoeki += ejitakutoeki_jikan;
@@ -215,7 +215,7 @@ namespace CSTEntryForm02a.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public async Task<IActionResult> Create( string EMendan1Am, string EMendan1Pm, string EMendan2Am, string EMendan2Pm, string EMendan3Am, string EMendan3Pm, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki,EShigotoKibou,EEmail,EPhone,EMendan1Date,EMendan1Ampm,EMendan2Date,EMendan2Ampm,EMendan3Date,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
-        public async Task<IActionResult> Create(int? id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Youbi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Youbi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Youbi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Create(int? id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
             ViewBag.Id = id;
             var formdata1 = Request.Form;
@@ -227,13 +227,13 @@ namespace CSTEntryForm02a.Controllers
 
                 var emendan1tsuki = Request.Form["EMendan1Tsuki"];
                 var emendan1hi = Request.Form["EMendan1Hi"];
-                var emendan1youbi = Request.Form["EMendan1Youbi"];
+                //var emendan1youbi = Request.Form["EMendan1Youbi"];
                 var emendan2tsuki = Request.Form["EMendan2Tsuki"];
                 var emendan2hi = Request.Form["EMendan2Hi"];
-                var emendan2youbi = Request.Form["EMendan2Youbi"];
+                //var emendan2youbi = Request.Form["EMendan2Youbi"];
                 var emendan3tsuki = Request.Form["EMendan3Tsuki"];
                 var emendan3hi = Request.Form["EMendan3Hi"];
-                var emendan3youbi = Request.Form["EMendan3Youbi"];
+                //var emendan3youbi = Request.Form["EMendan3Youbi"];
 
                 var emendan1date = "";
                 var emendan2date = "";
@@ -243,13 +243,13 @@ namespace CSTEntryForm02a.Controllers
 
                 emendan1date = emendan1tsuki;
                 emendan1date += emendan1hi;
-                emendan1date += emendan1youbi;
+                //emendan1date += emendan1youbi;
                 emendan2date = emendan2tsuki;
                 emendan2date += emendan2hi;
-                emendan2date += emendan2youbi;
+                //emendan2date += emendan2youbi;
                 emendan3date = emendan3tsuki;
                 emendan3date += emendan3hi;
-                emendan3date += emendan3youbi;
+                //emendan3date += emendan3youbi;
 
                 ejitakutoeki = ejitakutoeki_koutsu;
                 ejitakutoeki += ejitakutoeki_jikan;
@@ -350,7 +350,7 @@ namespace CSTEntryForm02a.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Youbi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Youbi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Youbi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ENameSei,ENameNamae,ENameSeiKana,ENameNamaeKana,ENenrei,EJitakuRosen,EJitakuMoyorieki,EJitakuToEki_Koutsu,EJitakuToEki_Jikan,EShigotoKibou,EEmail,EPhone,EMendan1Tsuki,EMendan1Hi,EMendan1Ampm,EMendan2Tsuki,EMendan2Hi,EMendan2Ampm,EMendan3Tsuki,EMendan3Hi,EMendan3Ampm,EQuestion,ETimeStamp")] TEntryMeibo tEntryMeibo)
         {
             if (id != tEntryMeibo.Id)
             {

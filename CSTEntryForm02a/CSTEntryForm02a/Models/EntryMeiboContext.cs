@@ -58,9 +58,9 @@ namespace CSTEntryForm02a.Models
                    .HasColumnName("eMendan1Hi")
                    .HasMaxLength(10);
 
-                entity.Property(e => e.EMendan1Youbi)
-                  .HasColumnName("eMendan1Youbi")
-                  .HasMaxLength(10);
+                //entity.Property(e => e.EMendan1Youbi)
+                //  .HasColumnName("eMendan1Youbi")
+                //  .HasMaxLength(10);
 
                 entity.Property(e => e.EMendan2Ampm)
                     .HasColumnName("eMendan2Ampm")
@@ -74,9 +74,9 @@ namespace CSTEntryForm02a.Models
                    .HasColumnName("eMendan2Hi")
                    .HasMaxLength(10);
 
-                entity.Property(e => e.EMendan2Youbi)
-                  .HasColumnName("eMendan2Youbi")
-                  .HasMaxLength(10);
+                //entity.Property(e => e.EMendan2Youbi)
+                //  .HasColumnName("eMendan2Youbi")
+                //  .HasMaxLength(10);
 
                 entity.Property(e => e.EMendan3Ampm)
                     .HasColumnName("eMendan3Ampm")
@@ -90,9 +90,9 @@ namespace CSTEntryForm02a.Models
                    .HasColumnName("eMendan3Hi")
                    .HasMaxLength(10);
 
-                entity.Property(e => e.EMendan3Youbi)
-                  .HasColumnName("eMendan3Youbi")
-                  .HasMaxLength(10);
+                //entity.Property(e => e.EMendan3Youbi)
+                //  .HasColumnName("eMendan3Youbi")
+                //  .HasMaxLength(10);
 
                 entity.Property(e => e.ENameNamae)
                     .IsRequired()
