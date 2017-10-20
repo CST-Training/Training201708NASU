@@ -7,7 +7,7 @@
 <head>
     <script type="text/javascript">
     <!--
-
+       
         function check1() {
 
             var text_equestion = document.entryform.EQuestion.value;
@@ -146,6 +146,10 @@
         height: 100px;
     }
 
+    .item_height120 {
+        height: 120px;
+    }
+
     .item_height160 {
         height: 160px;
     }
@@ -190,16 +194,19 @@
             @*<label asp-for="ENameSei" class="col-md-3 control-label"></label>*@
             <label asp-for="ENameSei" class="grid2 item_height16">氏名　 <font color="red">（必須）</font></label>
         </div>
-
-        <div class="grid3">
+        
+        <div class="grid2">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSei" class="form-control" placeholder="姓" value="" />　　<input style="display: inline; " asp-for="ENameNamae" class="form-control" placeholder="名" value="" />*@
-            <input type="text" maxlength="20" name="ENameSei" asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid3 item_height16"  />
+            <input type="text" maxlength="20" name="ENameSei" asp-for="ENameSei" style="display: inline;" placeholder="姓" class="grid2 item_height16"  />
             <span asp-validation-for="ENameSei" class="text-danger"></span>
-            
         </div>
-        <div class="grid3 ">
-            <input type="text" maxlength="20" name="ENameNamae" asp-for="ENameNamae" placeholder="名" class="grid3 item_height16" />
+        <script type="text/javascript">
+            document.entryform.ENameSei.focus();
+        </script>
+
+        <div class="grid2 ">
+            <input type="text" maxlength="20" name="ENameNamae" asp-for="ENameNamae" placeholder="名" class="grid2 item_height16" />
             <span asp-validation-for="ENameNamae" class="text-danger"></span>
         </div>
 
@@ -211,14 +218,14 @@
             @*<label asp-for="ENameSeiKana" class="col-md-3 control-label"></label>*@
             <label asp-for="ENameSeiKana" class="grid2 item_height16">ふりがな　<font color="red">（必須）</font></label>
         </div>
-        <div class="grid3">
+        <div class="grid2">
             @*<div class="col-md-10">*@
             @*<input style="display: inline; float: left;" asp-for="ENameSeiKana" class="form-control" placeholder="せい" value="" />　　<input style="display: inline;" asp-for="ENameNamaeKana" class="form-control" placeholder="めい" value="" />*@
-            <input type="text" maxlength="20" name="ENameSeiKana" asp-for="ENameSeiKana" placeholder="せい" class="grid3 item_height16 "  />
+            <input type="text" maxlength="20" name="ENameSeiKana" asp-for="ENameSeiKana" placeholder="せい" class="grid2 item_height16 "  />
             <span asp-validation-for="ENameSeiKana" class="text-danger"></span>
         </div>
-        <div class="grid3">
-            <input type="text" maxlength="20" name="ENameNamaeKana" asp-for="ENameNamaeKana" placeholder="めい" class="grid3 item_height16 "  />
+        <div class="grid2">
+            <input type="text" maxlength="20" name="ENameNamaeKana" asp-for="ENameNamaeKana" placeholder="めい" class="grid2 item_height16 "  />
             <span asp-validation-for="ENameNamaeKana" class="text-danger"></span>
         </div>
 
@@ -230,6 +237,26 @@
             @*<div class="col-md-2">*@
             <input type="text" maxlength="20" name="ENenrei" asp-for="ENenrei"　style = "text-align : left;" class="grid1 item_height16 " placeholder="歳"　/>
             <span asp-validation-for="ENenrei" class="text-danger"></span>
+        </div>
+
+        <div class="grid2 first">
+            @*<div class="form-group">*@
+            <label asp-for="EEmail" class="grid2 item_height16">email　<font color="red">（必須）</font></label>
+        </div>
+        <div class="grid4">
+            @*<div class="col-md-10">*@
+            <input type="text" maxlength="50" name="EEmail" asp-for="EEmail" placeholder="メール　アドレス" class="grid4 item_height16 " />
+            <span asp-validation-for="EEmail" class="text-danger"></span>
+        </div>
+
+        <div class="grid2 first">
+            @*<div class="form-group">*@
+            <label asp-for="EPhone" class="grid2 item_height16">電話　<font size="1">( ハイフンなし )</font></label>
+        </div>
+        <div class="grid4">
+            @*<div class="col-md-10">*@
+            <input type="text" maxlength="50" name="EPhone" asp-for="EPhone" placeholder="例: 0356887301 ハイフンなし" class="grid4 item_height16 " />
+            <span asp-validation-for="EPhone" class="text-danger"></span>
         </div>
 
         <div class="grid2 first">
@@ -263,7 +290,7 @@
                     <option value="その他">その他</option>
                 </select>
             @*<input type="hidden" asp-for="EJitakuToEki_Koutsu" name="EJitakuToEki_Koutsu" />*@
-       
+
 
             <span asp-validation-for="EJitakuToEki_Koutsu" class="text-danger"></span>
         </div>
@@ -294,25 +321,7 @@
             <span asp-validation-for="EShigotoKibou" class="text-danger"></span>
         </div>
 
-        <div class="grid2 first">
-            @*<div class="form-group">*@
-            <label asp-for="EEmail" class="grid2 item_height16">email　<font color="red">（必須）</font></label>
-        </div>
-        <div class="grid4">
-            @*<div class="col-md-10">*@
-            <input type="text" maxlength="50" name="EEmail" asp-for="EEmail" placeholder="メール　アドレス"  class="grid4 item_height16 "  />
-            <span asp-validation-for="EEmail" class="text-danger"></span>
-        </div>
 
-        <div class="grid2 first">
-            @*<div class="form-group">*@
-            <label asp-for="EPhone" class="grid2 item_height16">電話　<font size="1">( ハイフンなし )</font></label>
-        </div>
-        <div class="grid4">
-            @*<div class="col-md-10">*@
-            <input type="text" maxlength="50" name="EPhone" asp-for="EPhone" placeholder="例: 0356887301 ハイフンなし" class="grid4 item_height16 " />
-            <span asp-validation-for="EPhone" class="text-danger"></span>
-        </div>
 
         <div class="grid2 first">
 
@@ -611,9 +620,9 @@
             <label asp-for="EQuestion" class="grid2 item_height16" ></label>
         </div>
         @*<div>*@
-        <div class="grid8 item_height160 colspan2">
+        <div class="grid8 item_height120 colspan2">
             @*<div class="col-md-10">*@
-            <textarea type="text" maxlength="400" name="EQuestion" class="grid8 item_height160 colspan2" asp-for="EQuestion"　 placeholder="質問.要望など、自由にお書きください。   (400字まで)"></textarea>
+            <textarea type="text" maxlength="400" name="EQuestion" class="grid8 item_height120 colspan2" asp-for="EQuestion"　 placeholder="質問.要望など、自由にお書きください。   (400字まで)"></textarea>
             <span asp-validation-for="EQuestion" class="text-danger"></span>
         </div>
 
